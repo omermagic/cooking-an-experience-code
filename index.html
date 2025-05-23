@@ -35,8 +35,10 @@
     }
     section {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 1200px;
       margin: auto;
+      width: 100%;
+      box-sizing: border-box;
     }
     .gallery {
       display: flex;
@@ -61,6 +63,28 @@
       text-decoration: none;
       font-size: 1.2rem;
     }
+    .three-images-row {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .three-images-row img {
+      width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    @media (max-width: 700px) {
+      .three-images-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .three-images-row img {
+        width: 90vw;
+        max-width: 320px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -77,7 +101,7 @@
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; max-width: 1100px; margin: auto;">
       <div style="flex: 1 1 500px;">
         <h2 style="color: #843600;">Meet Anat Gazit</h2>
-        <p style="color: #2c2c2c; font-size: 1.05rem;">With over 15 years of teaching experience and a Master's in Education, Anat brings her unique approach to children's development through cooking.</p>
+        <p style="color: #2c2c2c; font-size: 1.05rem;">With over 20 years of teaching experience and a Master's in Education, Anat brings her unique approach to children's development through cooking.</p>
         <p style="color: #2c2c2c; font-size: 1.05rem;">As a certified cooking therapist, she has dedicated her career to creating a safe and nurturing environment where children can express themselves, build confidence, and develop essential life skills through culinary exploration.</p>
         <p style="color: #2c2c2c; font-size: 1.05rem;">Anat's passion for helping children grow through food stems from her belief that cooking engages all senses and provides a natural setting for emotional expression and social interaction.</p>
       </div>
@@ -89,26 +113,43 @@
   <section style="background-color: #fffaf4; padding: 3rem 1rem;">
     <h2 style="text-align:center; font-size: 2rem; color: #843600; margin-bottom: 2rem;">What is Cooking Therapy?</h2>
     <div style="display: flex; justify-content: center;">
-      <div style="background: #fff8ed; border: 2px solid #ffd87a; border-radius: 24px; box-shadow: 0 4px 16px rgba(255, 216, 122, 0.10); padding: 2rem 1.5rem; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; max-width: 1200px; width: 100%;">
-        <div style="flex: 1 1 280px; max-width: 300px; min-width: 220px;">
-          <h3 style="color: #a34a00;">Emotional Benefits</h3>
-          <p>Cooking provides a safe outlet for emotional expression. Children learn to process feelings through the tactile experience of food preparation, building self-confidence and pride in their creations.</p>
+      <div style="background: #fff8ed; border: 2px solid #ffd87a; border-radius: 24px; box-shadow: 0 4px 16px rgba(255, 216, 122, 0.10); padding: 2rem 1.5rem; display: flex; flex-direction: row; flex-wrap: wrap; gap: 2rem; justify-content: center; max-width: 900px; width: 100%;">
+        <div style="display: flex; flex-direction: column; gap: 2rem; flex: 1 1 300px; min-width: 220px; max-width: 420px;">
+          <div>
+            <h3 style="color: #a34a00;">Emotional Benefits</h3>
+            <p>Cooking provides a safe outlet for emotional expression. Children learn to process feelings through the tactile experience of food preparation, building self-confidence and pride in their creations.</p>
+          </div>
+          <div>
+            <h3 style="color: #a34a00;">Developmental Growth</h3>
+            <p>Through measuring, mixing, and following recipes, children enhance fine motor skills, sequencing abilities, and sensory integration while practicing focus and attention.</p>
+          </div>
+          <div>
+            <h3 style="color: #a34a00;">Social Connection</h3>
+            <p style="text-align: center;">Our small group setting encourages teamwork, communication, and sharing. Children learn to collaborate, take turns, and appreciate others' contributions in a supportive environment.</p>
+          </div>
         </div>
-        <div style="flex: 1 1 280px; max-width: 300px; min-width: 220px;">
-          <h3 style="color: #a34a00;">Developmental Growth</h3>
-          <p>Through measuring, mixing, and following recipes, children enhance fine motor skills, sequencing abilities, and sensory integration while practicing focus and attention.</p>
-        </div>
-        <div style="flex: 1 1 340px; max-width: 340px; min-width: 220px; display: flex; flex-direction: column; align-items: center;">
-          <h3 style="color: #a34a00;">Social Connection</h3>
-          <p style="text-align: center;">Our small group setting encourages teamwork, communication, and sharing. Children learn to collaborate, take turns, and appreciate others' contributions in a supportive environment.</p>
-          <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-            <img src="https://i.imgur.com/9QumBew.jpg" alt="Kids mixing dough" style="width: 100px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-            <img src="https://i.imgur.com/bu9MEn0.jpg" alt="Cooking on the stove" style="width: 100px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+        <div style="display: flex; flex-direction: column; gap: 2rem; flex: 1 1 300px; min-width: 220px; max-width: 420px;">
+          <div>
+            <h3 style="color: #a34a00;">Creative Expression</h3>
+            <p>Cooking is an art form that encourages imagination. Children explore colors, textures, and flavors, learning to make choices and express their individuality through each dish they create.</p>
+          </div>
+          <div>
+            <h3 style="color: #a34a00;">Responsibility and Independence</h3>
+            <p>Handling ingredients, using tools safely, and cleaning up after themselves teaches children accountability and independence. They gain a sense of ownership and take pride in completing tasks on their own.</p>
+          </div>
+          <div>
+            <h3 style="color: #a34a00;">Mindfulness and Relaxation</h3>
+            <p>The step-by-step nature of cooking promotes mindfulness. Children focus on the present moment, helping to reduce anxiety and improve emotional regulation in a calming, hands-on environment.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <div class="three-images-row">
+    <img src="https://i.imgur.com/9QumBew.jpg" alt="Kids mixing dough">
+    <img src="https://i.imgur.com/bu9MEn0.jpg" alt="Cooking on the stove">
+    <img src="https://i.imgur.com/YHkmwtx.jpg" alt="Kids enjoying food together">
+  </div>
   <section style="background-color: #fff4d0; padding: 3rem 2rem;">
     <h2 style="text-align: center; color: #843600; font-size: 2rem;">Session Details</h2>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
