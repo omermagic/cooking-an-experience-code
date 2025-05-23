@@ -12,22 +12,26 @@
       color: #333;
     }
     header {
-      background-color: #fbe0c3;
-      padding: 2rem;
-      text-align: center;
+      background: linear-gradient(90deg, #fbe0c3 60%, #ffd87a 100%);
+      padding: 2.5rem 1rem;
     }
     header img.logo {
-      max-width: 120px;
-      display: block;
-      margin: 0 auto 1rem;
+      max-width: 177 px;
+      min-width: 120px;
+      height: 120px;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(132, 54, 0, 0.08);
     }
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.7rem;
+      color: #843600;
+      letter-spacing: 1px;
     }
     header p {
-      margin: 0.5rem 0 0;
-      font-size: 1.2rem;
+      margin: 0.7rem 0 0;
+      font-size: 1.3rem;
+      color: #a34a00;
     }
     section {
       padding: 2rem;
@@ -61,9 +65,13 @@
 </head>
 <body>
   <header>
-    <img class="logo" src="https://i.imgur.com/VYkvVql.jpg" alt="Cooking an Experience Logo" />
-    <h1>Cooking an Experience</h1>
-    <p>Cooking therapy for kids in Valbom, Porto</p>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 2.5rem; max-width: 900px; margin: 0 auto;">
+      <img class="logo" src="https://i.imgur.com/VYkvVql.jpg" alt="Cooking an Experience Logo" />
+      <div style="text-align: left;">
+        <h1>Cooking an Experience</h1>
+        <p>Cooking therapy for kids in Valbom, Porto</p>
+      </div>
+    </div>
   </header>
   <section style="background-color: #fdf4eb; padding: 3rem 2rem;">
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; max-width: 1100px; margin: auto;">
