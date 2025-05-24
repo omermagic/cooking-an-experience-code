@@ -69,6 +69,18 @@ a.phone {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+.location-box-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.location-box-flex > div {
+  flex: 1 1 0;
+}
+.location-box-flex > img {
+  align-self: flex-start;
+}
 @media (max-width: 700px) {
   .three-images-row {
     flex-direction: column;
@@ -96,5 +108,22 @@ a.phone {
   }
   html {
     overflow-x: hidden;
+  }
+  .location-box-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .location-box-flex > div {
+    width: 100%;
+    order: 1;
+  }
+  .location-box-flex > img {
+    margin-left: 0 !important;
+    margin-top: 1rem;
+    width: 90vw;
+    max-width: 320px;
+    align-self: center;
+    order: 2;
+    display: none;
   }
 }
