@@ -145,7 +145,10 @@
   </div>
 </section>
   <footer>
-    © 2025 Cooking an Experience | Anat Gazit
+    © <span id="year"></span> Cooking an Experience | Anat Gazit
   </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

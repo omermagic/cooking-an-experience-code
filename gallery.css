@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fffaf4;
+  /* Tye-dye style background */
+  background: radial-gradient(circle at 20% 20%, #ffe29f 0%, #ffaec9 30%, #a0e9ff 60%, #baffc9 80%, #fffaf4 100%);
   color: #333;
 }
 header {
