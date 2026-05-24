@@ -18,7 +18,6 @@
       --gold: #c99545;
       --gold-dark: #8b5f28;
       --chocolate: #35170f;
-      --cream: #fbf3e8;
       --soft: #f8f5f1;
       --line: #eee3d5;
       --shadow: 0 18px 50px rgba(36, 25, 20, 0.10);
@@ -123,21 +122,25 @@
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       min-height: 52px;
       padding: 14px 24px;
       border-radius: 999px;
       font-family: Arial, sans-serif;
       font-weight: 700;
       letter-spacing: 0.01em;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       cursor: pointer;
       text-align: center;
       line-height: 1.2;
       position: relative;
-      z-index: 3;
+      z-index: 10;
+      text-decoration: none !important;
+      overflow: visible !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
 
     .btn:hover {
@@ -145,11 +148,32 @@
     }
 
     .btn-primary {
-      background: var(--gold);
+      background: #c99545 !important;
       color: #25170f !important;
+      -webkit-text-fill-color: #25170f !important;
       box-shadow: 0 14px 32px rgba(199, 150, 75, 0.28);
       min-width: 300px;
       white-space: nowrap;
+    }
+
+    .btn-primary::before {
+      content: attr(data-label);
+      color: #25170f !important;
+      -webkit-text-fill-color: #25170f !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: inline-block !important;
+      position: relative !important;
+      z-index: 99 !important;
+      font-family: Arial, sans-serif !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 1.2 !important;
+      white-space: nowrap !important;
+    }
+
+    .btn-primary:hover {
+      background: #d9a85c !important;
     }
 
     .btn-primary:visited,
@@ -157,17 +181,26 @@
     .btn-primary:active,
     .btn-primary:focus {
       color: #25170f !important;
-    }
-
-    .btn-primary:hover {
-      background: #d9a85c;
+      -webkit-text-fill-color: #25170f !important;
     }
 
     .btn-secondary {
       border: 1px solid rgba(255,255,255,0.48);
       color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
       background: rgba(255,255,255,0.08);
       backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary::before {
+      content: attr(data-label);
+      color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
+      font-family: Arial, sans-serif !important;
+      font-size: 16px !important;
+      font-weight: 700 !important;
+      line-height: 1.2 !important;
+      white-space: nowrap !important;
     }
 
     .btn-secondary:visited,
@@ -175,6 +208,7 @@
     .btn-secondary:active,
     .btn-secondary:focus {
       color: #fff !important;
+      -webkit-text-fill-color: #fff !important;
     }
 
     section {
@@ -501,6 +535,11 @@
         white-space: normal;
       }
 
+      .btn-primary::before,
+      .btn-secondary::before {
+        white-space: normal !important;
+      }
+
       .mobile-break {
         display: block;
       }
@@ -522,13 +561,17 @@
         </p>
 
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27m%20interested%20in%20Eclairs%20of%20the%20Douro.%20Can%20you%20send%20me%20details%3F" target="_blank" rel="noopener">
-            Request on WhatsApp
-          </a>
+          <a class="btn btn-primary"
+             data-label="Request on WhatsApp"
+             aria-label="Request on WhatsApp"
+             href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27m%20interested%20in%20Eclairs%20of%20the%20Douro.%20Can%20you%20send%20me%20details%3F"
+             target="_blank"
+             rel="noopener"></a>
 
-          <a class="btn btn-secondary" href="#experience">
-            See the experience
-          </a>
+          <a class="btn btn-secondary"
+             data-label="See the experience"
+             aria-label="See the experience"
+             href="#experience"></a>
         </div>
       </div>
     </header>
@@ -620,9 +663,12 @@
             and more special than a standard tour.
           </p>
 
-          <a class="btn btn-primary" href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27d%20like%20to%20check%20availability%20for%20Eclairs%20of%20the%20Douro." target="_blank" rel="noopener">
-            Check availability
-          </a>
+          <a class="btn btn-primary"
+             data-label="Check availability"
+             aria-label="Check availability"
+             href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27d%20like%20to%20check%20availability%20for%20Eclairs%20of%20the%20Douro."
+             target="_blank"
+             rel="noopener"></a>
         </div>
       </div>
     </section>
@@ -754,9 +800,12 @@
           </p>
 
           <div class="cta-row">
-            <a class="btn btn-primary" href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27m%20interested%20in%20Eclairs%20of%20the%20Douro.%20Can%20you%20send%20me%20details%3F" target="_blank" rel="noopener">
-              Message on WhatsApp
-            </a>
+            <a class="btn btn-primary"
+               data-label="Message on WhatsApp"
+               aria-label="Message on WhatsApp"
+               href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27m%20interested%20in%20Eclairs%20of%20the%20Douro.%20Can%20you%20send%20me%20details%3F"
+               target="_blank"
+               rel="noopener"></a>
           </div>
         </div>
       </div>
