@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eclairs of the Douro | Pastry & Wine Experience near Porto</title>
-  <meta name="description" content="A chic 2.5-hour pastry-and-wine experience near Porto. Make elegant chocolate-glazed éclairs, enjoy Portuguese wine, and relax with Douro views in Valbom." />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="A chic 2.5-hour pastry-and-wine experience near Porto. Make elegant chocolate-glazed éclairs, enjoy Portuguese wine, and relax with Douro views in Valbom.">
+
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
   <style>
     :root {
       --bg: #fffdf9;
@@ -132,6 +134,10 @@
       letter-spacing: 0.01em;
       transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
       cursor: pointer;
+      text-align: center;
+      line-height: 1.2;
+      position: relative;
+      z-index: 3;
     }
 
     .btn:hover {
@@ -140,8 +146,17 @@
 
     .btn-primary {
       background: var(--gold);
-      color: #25170f;
+      color: #25170f !important;
       box-shadow: 0 14px 32px rgba(199, 150, 75, 0.28);
+      min-width: 300px;
+      white-space: nowrap;
+    }
+
+    .btn-primary:visited,
+    .btn-primary:hover,
+    .btn-primary:active,
+    .btn-primary:focus {
+      color: #25170f !important;
     }
 
     .btn-primary:hover {
@@ -150,9 +165,16 @@
 
     .btn-secondary {
       border: 1px solid rgba(255,255,255,0.48);
-      color: #fff;
+      color: #fff !important;
       background: rgba(255,255,255,0.08);
       backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:visited,
+    .btn-secondary:hover,
+    .btn-secondary:active,
+    .btn-secondary:focus {
+      color: #fff !important;
     }
 
     section {
@@ -234,10 +256,6 @@
       border-bottom: 1px solid rgba(156, 110, 46, 0.18);
       padding-bottom: 12px;
       color: var(--muted);
-    }
-
-    .facts li span {
-      text-align: left;
     }
 
     .facts li:last-child {
@@ -469,12 +487,18 @@
       }
 
       .facts li {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 4px;
       }
 
       .btn {
         width: 100%;
+      }
+
+      .btn-primary {
+        min-width: 0;
+        width: 100%;
+        white-space: normal;
       }
 
       .mobile-break {
@@ -483,16 +507,28 @@
     }
   </style>
 </head>
+
 <body>
   <main class="page">
     <header class="hero" id="top">
       <div class="hero-inner">
         <div class="eyebrow">Small-group pastry & wine experience near Porto</div>
-        <h1>Eclairs of<br class="mobile-break" /> the Douro</h1>
-        <p class="hero-subtitle">A chic 2.5-hour evening where you make elegant chocolate-glazed éclairs, enjoy Portuguese wine and snacks, and relax with beautiful Douro views.</p>
+
+        <h1>Eclairs of<br class="mobile-break"> the Douro</h1>
+
+        <p class="hero-subtitle">
+          A chic 2.5-hour evening where you make elegant chocolate-glazed éclairs,
+          enjoy Portuguese wine and snacks, and relax with beautiful Douro views.
+        </p>
+
         <div class="cta-row">
-          <a class="btn btn-primary" href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27m%20interested%20in%20Eclairs%20of%20the%20Douro.%20Can%20you%20send%20me%20details%3F" target="_blank" rel="noopener">Request a spot on WhatsApp</a>
-          <a class="btn btn-secondary" href="#experience">See the experience</a>
+          <a class="btn btn-primary" href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27m%20interested%20in%20Eclairs%20of%20the%20Douro.%20Can%20you%20send%20me%20details%3F" target="_blank" rel="noopener">
+            Request on WhatsApp
+          </a>
+
+          <a class="btn btn-secondary" href="#experience">
+            See the experience
+          </a>
         </div>
       </div>
     </header>
@@ -502,9 +538,18 @@
         <div>
           <div class="section-label">A sweet Porto evening</div>
           <h2>Make éclairs. Sip wine. Watch the Douro glow.</h2>
-          <p>Join Anat in an intimate home setting in Valbom, just outside Porto, for a relaxed pastry experience designed for couples, friends, and curious travelers.</p>
-          <p>You will learn how éclairs come together, prepare the cream, fill and glaze your own chocolate éclairs, then enjoy them with wine, light snacks, and a beautiful Douro view.</p>
+
+          <p>
+            Join Anat in an intimate dedicated kitchen space in Valbom, just outside Porto,
+            for a relaxed pastry experience designed for couples, friends, and curious travelers.
+          </p>
+
+          <p>
+            You will learn how éclairs come together, prepare the cream, fill and glaze your own
+            chocolate éclairs, then enjoy them with wine, light snacks, and a beautiful Douro view.
+          </p>
         </div>
+
         <aside class="facts" aria-label="Quick facts">
           <ul>
             <li><strong>Duration</strong><span>2.5 hours</span></li>
@@ -522,21 +567,33 @@
       <div class="container">
         <div class="section-label">Why guests love it</div>
         <h2>A different kind of Porto experience</h2>
+
         <div class="grid-3">
           <article class="feature-card">
             <div class="icon">🍫</div>
             <h3>Elegant chocolate éclairs</h3>
-            <p>Learn the steps behind classic choux pastry, smooth pastry cream, filling, and a clean chocolate glaze.</p>
+            <p>
+              Learn the steps behind classic choux pastry, smooth pastry cream,
+              filling, and a clean chocolate glaze.
+            </p>
           </article>
+
           <article class="feature-card">
             <div class="icon">🍷</div>
             <h3>Wine & relaxed tasting</h3>
-            <p>While the éclairs bake and cool, enjoy Portuguese wine, cheese, crackers, and easy conversation.</p>
+            <p>
+              While the éclairs bake and cool, enjoy Portuguese wine, cheese,
+              crackers, and easy conversation.
+            </p>
           </article>
+
           <article class="feature-card">
             <div class="icon">🌉</div>
             <h3>Douro views near Porto</h3>
-            <p>A cozy, intimate setting in Valbom with a view that makes the evening feel special and memorable.</p>
+            <p>
+              A cozy, intimate setting in Valbom with a view that makes the evening
+              feel special and memorable.
+            </p>
           </article>
         </div>
       </div>
@@ -545,14 +602,27 @@
     <section class="cream-section">
       <div class="container split">
         <div class="image-frame">
-          <img src="images/ecl.jpg" alt="Chocolate glazed éclairs prepared during the experience" />
+          <img src="images/ecl.jpg" alt="Chocolate glazed éclairs prepared during the experience">
         </div>
+
         <div>
           <div class="section-label">What you will do</div>
           <h2>Hands-on, but relaxed.</h2>
-          <p>This is not a stressful technical class. It is a beautiful evening with enough hands-on pastry work to feel real, and enough wine, tasting, and conversation to feel like a treat.</p>
-          <p>Perfect for visitors who want something more personal than a restaurant dinner and more special than a standard tour.</p>
-          <a class="btn btn-primary" href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27d%20like%20to%20check%20availability%20for%20Eclairs%20of%20the%20Douro." target="_blank" rel="noopener">Check availability</a>
+
+          <p>
+            This is not a stressful technical class. It is a beautiful evening with enough
+            hands-on pastry work to feel real, and enough wine, tasting, and conversation
+            to feel like a treat.
+          </p>
+
+          <p>
+            Perfect for visitors who want something more personal than a restaurant dinner
+            and more special than a standard tour.
+          </p>
+
+          <a class="btn btn-primary" href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27d%20like%20to%20check%20availability%20for%20Eclairs%20of%20the%20Douro." target="_blank" rel="noopener">
+            Check availability
+          </a>
         </div>
       </div>
     </section>
@@ -561,27 +631,32 @@
       <div class="container">
         <div class="section-label">The flow</div>
         <h2>Your 2.5-hour evening</h2>
+
         <div class="steps">
           <article class="step">
             <div class="step-number">01</div>
             <h3>Welcome</h3>
             <p>Arrive, settle in, enjoy the view, and get introduced to the evening.</p>
           </article>
+
           <article class="step">
             <div class="step-number">02</div>
             <h3>Choux pastry</h3>
             <p>Learn how éclairs are made and prepare the pastry for baking.</p>
           </article>
+
           <article class="step">
             <div class="step-number">03</div>
             <h3>Cream</h3>
             <p>Make a smooth pastry cream while the éclairs bake.</p>
           </article>
+
           <article class="step">
             <div class="step-number">04</div>
             <h3>Wine break</h3>
             <p>Relax with wine and snacks while the pastry cools.</p>
           </article>
+
           <article class="step">
             <div class="step-number">05</div>
             <h3>Fill & glaze</h3>
@@ -595,12 +670,18 @@
       <div class="container">
         <div class="host-card">
           <div class="host-photo">
-            <img src="images/AnatCo.jpg" alt="Anat Gazit, host of Eclairs of the Douro" />
+            <img src="images/AnatCo.jpg" alt="Anat Gazit, host of Eclairs of the Douro">
           </div>
+
           <div>
             <div class="section-label">Your host</div>
             <h2>Hosted by Anat Gazit</h2>
-            <p>Anat is a Cordon Bleu-trained baker and experienced educator who loves creating warm, personal, and beautiful food experiences. Her style is calm, generous, and deeply attentive — making guests feel comfortable from the first minute.</p>
+
+            <p>
+              Anat is a Cordon Bleu-trained baker and experienced educator who loves creating warm,
+              personal, and beautiful food experiences. Her style is calm, generous, and deeply attentive —
+              making guests feel comfortable from the first minute.
+            </p>
           </div>
         </div>
 
@@ -608,11 +689,16 @@
           <div>
             <div class="section-label" style="color:#d9a85c;">Small group, premium feel</div>
             <h2>Special launch evenings now open</h2>
-            <p>For the first sessions, we are offering a special launch price before the regular price becomes €89. Each evening is limited to 6 guests, so availability is intentionally small.</p>
+
+            <p>
+              For the first sessions, we are offering a special launch price before the regular price
+              becomes €89. Each evening is limited to 6 guests, so availability is intentionally small.
+            </p>
           </div>
+
           <div class="price">
             <div class="amount">€65</div>
-            <div class="note">launch price per person<br />regular price €89</div>
+            <div class="note">launch price per person<br>regular price €89</div>
           </div>
         </div>
       </div>
@@ -622,22 +708,36 @@
       <div class="container">
         <div class="section-label">Good to know</div>
         <h2>Frequently asked questions</h2>
+
         <div class="faq-grid">
           <article class="faq-item">
             <h3>Where is it?</h3>
-            <p>The experience takes place in Valbom, in the Porto area. Most guests arrive by Uber or Bolt. The exact address is shared after booking.</p>
+            <p>
+              The experience takes place in Valbom, in the Porto area. Most guests arrive by Uber or Bolt.
+              The exact address is shared after booking.
+            </p>
           </article>
+
           <article class="faq-item">
             <h3>Do I need baking experience?</h3>
-            <p>No. The experience is designed to be friendly and accessible, even if you have never made éclairs before.</p>
+            <p>
+              No. The experience is designed to be friendly and accessible, even if you have never made éclairs before.
+            </p>
           </article>
+
           <article class="faq-item">
             <h3>Is it a full dinner?</h3>
-            <p>No. It includes wine, cheese, crackers, and dessert tasting. It works beautifully before or after a light meal.</p>
+            <p>
+              No. It includes wine, cheese, crackers, and dessert tasting.
+              It works beautifully before or after a light meal.
+            </p>
           </article>
+
           <article class="faq-item">
             <h3>Can we book a private group?</h3>
-            <p>Yes. Private groups of up to 6 guests can request a custom date, depending on availability.</p>
+            <p>
+              Yes. Private groups of up to 6 guests can request a custom date, depending on availability.
+            </p>
           </article>
         </div>
       </div>
@@ -648,9 +748,15 @@
         <div class="final-cta">
           <div class="section-label" style="color:#d9a85c;">Ready for something special?</div>
           <h2>Join the next Eclairs of the Douro evening</h2>
-          <p>Message Anat to check availability, ask a question, or request a private session for your group.</p>
+
+          <p>
+            Message Anat to check availability, ask a question, or request a private session for your group.
+          </p>
+
           <div class="cta-row">
-            <a class="btn btn-primary" href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27m%20interested%20in%20Eclairs%20of%20the%20Douro.%20Can%20you%20send%20me%20details%3F" target="_blank" rel="noopener">Message on WhatsApp</a>
+            <a class="btn btn-primary" href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%27m%20interested%20in%20Eclairs%20of%20the%20Douro.%20Can%20you%20send%20me%20details%3F" target="_blank" rel="noopener">
+              Message on WhatsApp
+            </a>
           </div>
         </div>
       </div>
