@@ -397,7 +397,7 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       background: var(--soft);
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 3 / 4;
       border: 1px solid var(--line);
     }
 
@@ -416,6 +416,11 @@
       font-family: Arial, sans-serif;
       font-size: 14px;
       color: var(--muted);
+    }
+
+    .hero .cta-note {
+      max-width: 620px;
+      color: rgba(255,255,255,0.82);
     }
 
     .on-dark .cta-note {
@@ -491,6 +496,14 @@
 
     .booking-panel p {
       color: rgba(255,255,255,0.78);
+    }
+
+    .booking-price {
+      margin: 0 0 14px;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gold);
     }
 
     .booking-panel .cta-row {
@@ -620,6 +633,7 @@
       h1,
       .hero-subtitle,
       .hero-copy,
+      .hero .cta-note,
       .trust-line,
       .hero .cta-row,
       .hero .btn {
@@ -651,10 +665,6 @@
         padding: 24px;
       }
 
-      .image-frame {
-        aspect-ratio: 4 / 5;
-      }
-
       .facts li {
         grid-template-columns: 1fr;
         gap: 4px;
@@ -681,6 +691,7 @@
       h1,
       .hero-subtitle,
       .hero-copy,
+      .hero .cta-note,
       .trust-line,
       .hero .cta-row,
       .hero .btn {
@@ -744,8 +755,9 @@
         <ul class="trust-line" aria-label="Experience details">
           <li>2.5 hours</li>
           <li>Up to 6 guests</li>
-          <li>English</li>
           <li>Wine included</li>
+          <li>Introductory price: €45 per person</li>
+          <li>English</li>
           <li>Secure booking via Viator</li>
         </ul>
 
@@ -761,6 +773,7 @@
              aria-label="See what you'll do"
              href="#what-youll-do">See what you'll do</a>
         </div>
+        <p class="cta-note">Introductory price: €45 per person · Small group up to 6 guests</p>
       </div>
     </header>
 
@@ -787,6 +800,7 @@
             <li><strong>Location</strong><span>Valbom/Gondomar, near Porto</span></li>
             <li><strong>Travel</strong><span>10–15 minutes by Uber or Bolt</span></li>
             <li><strong>Includes</strong><span>Éclairs, wine, light snacks &amp; tasting</span></li>
+            <li><strong>Price</strong><span>Introductory price: €45 per person</span></li>
             <li><strong>Language</strong><span>English</span></li>
             <li><strong>Booking</strong><span>Secure booking through Viator</span></li>
           </ul>
@@ -870,7 +884,7 @@
              href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
              target="_blank"
              rel="noopener">Reserve your spot on Viator</a>
-            <p class="cta-note">Secure booking · Small group · Wine included</p>
+            <p class="cta-note">Introductory price: €45 per person · Small group up to 6 guests</p>
           </div>
         </div>
       </div>
@@ -950,6 +964,7 @@
               Small groups are limited to 6 guests, so availability can be limited.
               Book securely through Viator to choose your date and reserve your spot.
             </p>
+            <div class="booking-price">Introductory price: €45 per person</div>
             <div class="booking-trust">Secure booking · Mobile ticket · Small group experience</div>
           </div>
 
@@ -1038,7 +1053,7 @@
                target="_blank"
                rel="noopener">Check availability on Viator</a>
           </div>
-          <p class="cta-note">Secure booking · Mobile ticket · Up to 6 guests</p>
+          <p class="cta-note">Introductory price: €45 per person · Final availability and booking details shown on Viator.</p>
         </div>
       </div>
     </section>
