@@ -7,6 +7,16 @@
   <title>Eclairs of the Douro | Small-Group Pastry &amp; Wine Experience near Porto</title>
   <meta name="description" content="Make chocolate éclairs with Anat, enjoy Portuguese wine, and relax with a Douro view. A small-group pastry experience near Porto, bookable through Viator.">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7TMBFH53X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-N7TMBFH53X');
+  </script>
+
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="preload" as="image" href="images/view-900.jpg" imagesrcset="images/view-900.jpg 900w, images/view-1800.jpg 1800w" imagesizes="100vw">
@@ -237,6 +247,22 @@
       -webkit-text-fill-color: #fff !important;
     }
 
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 52px;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.88);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    .text-link:hover {
+      color: #fff;
+    }
+
     section {
       padding: 78px 20px;
     }
@@ -421,6 +447,15 @@
     .hero .cta-note {
       max-width: 620px;
       color: rgba(255,255,255,0.82);
+    }
+
+    .hero .audience-fit {
+      max-width: 700px;
+      margin: 14px 0 0;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.86);
     }
 
     .on-dark .cta-note {
@@ -633,6 +668,7 @@
       h1,
       .hero-subtitle,
       .hero-copy,
+      .hero .audience-fit,
       .hero .cta-note,
       .trust-line,
       .hero .cta-row,
@@ -691,6 +727,7 @@
       h1,
       .hero-subtitle,
       .hero-copy,
+      .hero .audience-fit,
       .hero .cta-note,
       .trust-line,
       .hero .cta-row,
@@ -745,18 +782,18 @@
 
         <h1>Eclairs of the<br class="mobile-break"> Douro</h1>
 
-        <p class="hero-subtitle">A small-group pastry &amp; wine evening near Porto</p>
+        <p class="hero-subtitle">Make éclairs, sip Portuguese wine, and enjoy a relaxed Douro evening</p>
 
         <p class="hero-copy">
           Make elegant chocolate-glazed éclairs with Anat, enjoy Portuguese wine and light snacks,
-          and relax with a beautiful Douro view — just 10–15 minutes from central Porto by Uber or Bolt.
+          and relax with a beautiful Douro view. Just 10–15 minutes from central Porto by Uber or Bolt.
         </p>
 
         <ul class="trust-line" aria-label="Experience details">
           <li>2.5 hours</li>
           <li>Up to 6 guests</li>
           <li>Wine included</li>
-          <li>Introductory price: €45 per person</li>
+          <li>Special introductory price — €45 per person</li>
           <li>English</li>
           <li>Secure booking via Viator</li>
         </ul>
@@ -769,11 +806,15 @@
              target="_blank"
              rel="noopener">Check availability on Viator</a>
 
-          <a class="btn btn-secondary"
+          <a class="text-link"
              aria-label="See what you'll do"
              href="#what-youll-do">See what you'll do</a>
         </div>
-        <p class="cta-note">Introductory price: €45 per person · Small group up to 6 guests</p>
+        <p class="audience-fit">
+          Perfect for couples, friends, solo travelers, and anyone looking for a unique evening near Porto.
+        </p>
+        <p class="cta-note">Special introductory price — €45 per person · Small group up to 6 guests</p>
+        <!-- TODO: Show only when there are enough public Viator reviews: <p class="social-proof">⭐ 5.0 on Viator</p> -->
       </div>
     </header>
 
@@ -800,7 +841,7 @@
             <li><strong>Location</strong><span>Valbom/Gondomar, near Porto</span></li>
             <li><strong>Travel</strong><span>10–15 minutes by Uber or Bolt</span></li>
             <li><strong>Includes</strong><span>Éclairs, wine, light snacks &amp; tasting</span></li>
-            <li><strong>Price</strong><span>Introductory price: €45 per person</span></li>
+            <li><strong>Price</strong><span>Special introductory price — €45 per person</span></li>
             <li><strong>Language</strong><span>English</span></li>
             <li><strong>Booking</strong><span>Secure booking through Viator</span></li>
           </ul>
@@ -877,14 +918,19 @@
             Porto evening rather than a technical class.
           </p>
 
+          <p>
+            Leave with your own handmade éclairs, the recipe to recreate them at home, and memories
+            of a unique Porto evening.
+          </p>
+
           <div class="section-cta">
             <a class="btn btn-primary viator-cta"
              data-cta-location="mid_page"
-             aria-label="Reserve your spot on Viator"
+             aria-label="Check availability on Viator"
              href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
              target="_blank"
-             rel="noopener">Reserve your spot on Viator</a>
-            <p class="cta-note">Introductory price: €45 per person · Small group up to 6 guests</p>
+             rel="noopener">Check availability on Viator</a>
+            <p class="cta-note">Special introductory price — €45 per person · Small group up to 6 guests</p>
           </div>
         </div>
       </div>
@@ -947,10 +993,11 @@
             <h2>Hosted by Anat</h2>
 
             <p>
-              Anat brings together professional pastry training from Le Cordon Bleu Paris with years
-              of experience creating warm, hands-on experiences for families, friends, and travelers.
-              The evening is personal, relaxed, and designed for a small group — so every guest can
-              take part, ask questions, and enjoy the process.
+              Anat loves bringing people together through pastry, conversation, and relaxed evenings
+              overlooking the Douro. She brings professional pastry training from Le Cordon Bleu Paris
+              together with years of experience creating warm, hands-on moments for families, friends,
+              and travelers. The evening is personal, relaxed, and designed for a small group — so every
+              guest can take part, ask questions, and enjoy the process.
             </p>
           </div>
         </div>
@@ -962,9 +1009,9 @@
 
             <p>
               Small groups are limited to 6 guests, so availability can be limited.
-              Book securely through Viator to choose your date and reserve your spot.
+              Book securely through Viator to choose your date and complete your booking.
             </p>
-            <div class="booking-price">Introductory price: €45 per person</div>
+            <div class="booking-price">Special introductory price — €45 per person</div>
             <div class="booking-trust">Secure booking · Mobile ticket · Small group experience</div>
           </div>
 
@@ -1020,7 +1067,7 @@
             <h3>How do I book?</h3>
             <p>
               Booking is handled securely through Viator. Click “Check availability on Viator”
-              to choose your date and reserve your spot.
+              to choose your date and complete your booking.
             </p>
           </article>
 
@@ -1044,6 +1091,7 @@
             Make éclairs with Anat, sip Portuguese wine, and spend a beautiful small-group evening
             near the Douro, just minutes from central Porto.
           </p>
+          <p>A beautiful alternative to another restaurant night in Porto.</p>
 
           <div class="cta-row">
             <a class="btn btn-primary viator-cta"
@@ -1053,7 +1101,7 @@
                target="_blank"
                rel="noopener">Check availability on Viator</a>
           </div>
-          <p class="cta-note">Introductory price: €45 per person · Final availability and booking details shown on Viator.</p>
+          <p class="cta-note">Special introductory price — €45 per person · Final availability and booking details shown on Viator.</p>
         </div>
       </div>
     </section>
