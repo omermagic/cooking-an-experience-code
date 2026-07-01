@@ -4,25 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Eclairs of the Douro | Pastry & Wine Experience near Porto</title>
-  <meta name="description" content="A chic 2.5-hour pastry-and-wine experience near Porto. Make elegant chocolate-glazed éclairs, enjoy Portuguese wine, and relax with Douro views in Valbom.">
+  <title>Eclairs of the Douro | Small-Group Pastry &amp; Wine Experience near Porto</title>
+  <meta name="description" content="Make chocolate éclairs with Anat, enjoy Portuguese wine, and relax with a Douro view. A small-group pastry experience near Porto, bookable through Viator.">
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="preload" as="image" href="images/view-900.jpg" imagesrcset="images/view-900.jpg 900w, images/view-1800.jpg 1800w" imagesizes="100vw">
 
   <style>
     :root {
-      --bg: #fffdf9;
+      --bg: #fffaf5;
       --paper: #ffffff;
-      --ink: #241914;
-      --muted: #6f625c;
-      --gold: #c99545;
-      --gold-dark: #8b5f28;
-      --chocolate: #35170f;
-      --soft: #f8f5f1;
-      --line: #eee3d5;
+      --ink: #201915;
+      --muted: #625b55;
+      --gold: #d2a24d;
+      --gold-dark: #8b632f;
+      --chocolate: #2f1912;
+      --river: #245861;
+      --wine: #7f2e3c;
+      --soft: #f6f1ea;
+      --mist: #eef5f4;
+      --line: #e7ded2;
       --shadow: 0 18px 50px rgba(36, 25, 20, 0.10);
-      --radius: 24px;
+      --radius: 8px;
       --max: 1120px;
     }
 
@@ -33,9 +37,10 @@
     body {
       margin: 0;
       font-family: Georgia, 'Times New Roman', serif;
-      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 44%, #ffffff 100%);
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 42%, #f7fbfa 100%);
       color: var(--ink);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     img {
@@ -53,15 +58,23 @@
     }
 
     .hero {
-      min-height: 92vh;
+      min-height: 88vh;
       display: grid;
-      place-items: center;
-      padding: 32px 20px;
-      background:
-        linear-gradient(120deg, rgba(42, 33, 28, 0.72), rgba(75, 36, 24, 0.45)),
-        url('images/view.jpg') center/cover no-repeat;
+      align-items: center;
+      justify-items: stretch;
+      padding: 56px 20px 110px;
+      background-color: #34231a;
+      background-image:
+        linear-gradient(110deg, rgba(28, 22, 18, 0.82) 0%, rgba(49, 29, 22, 0.68) 47%, rgba(36, 88, 97, 0.28) 100%),
+        url('images/view-1800.jpg');
+      background-image:
+        linear-gradient(110deg, rgba(28, 22, 18, 0.82) 0%, rgba(49, 29, 22, 0.68) 47%, rgba(36, 88, 97, 0.28) 100%),
+        image-set(url('images/view-900.jpg') 1x, url('images/view-1800.jpg') 2x);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       color: #fff;
-      text-align: center;
+      text-align: left;
       position: relative;
     }
 
@@ -75,49 +88,88 @@
     }
 
     .hero-inner {
-      max-width: 900px;
+      width: 100%;
+      max-width: var(--max);
+      min-width: 0;
+      margin: 0 auto;
       position: relative;
       z-index: 1;
-      padding: 56px 22px;
+      padding: 18px 0 0;
     }
 
+    .hero-overline,
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 16px;
+      padding: 8px 14px;
       border: 1px solid rgba(255,255,255,0.45);
       border-radius: 999px;
       background: rgba(255,255,255,0.12);
       backdrop-filter: blur(8px);
       font-family: Arial, sans-serif;
       font-size: 13px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0;
       text-transform: uppercase;
       margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(44px, 8vw, 92px);
-      line-height: 0.95;
+      max-width: 760px;
+      font-size: 82px;
+      line-height: 0.98;
       margin: 0 0 18px;
-      letter-spacing: -0.045em;
+      letter-spacing: 0;
       font-weight: 500;
+      overflow-wrap: break-word;
     }
 
     .hero-subtitle {
+      width: 100%;
       max-width: 760px;
-      margin: 0 auto 32px;
+      margin: 0 0 10px;
       font-family: Arial, sans-serif;
-      font-size: clamp(18px, 2.5vw, 24px);
+      font-size: 24px;
       line-height: 1.45;
+      color: rgba(255,255,255,0.95);
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 0 20px;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .trust-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 780px;
+      margin: 0 0 28px;
+      padding: 0;
+      list-style: none;
+      font-family: Arial, sans-serif;
       color: rgba(255,255,255,0.92);
+    }
+
+    .trust-line li {
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.11);
+      backdrop-filter: blur(8px);
+      font-size: 14px;
     }
 
     .cta-row {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 14px;
       margin-top: 24px;
     }
@@ -131,7 +183,7 @@
       border-radius: 999px;
       font-family: Arial, sans-serif;
       font-weight: 700;
-      letter-spacing: 0.01em;
+      letter-spacing: 0;
       cursor: pointer;
       text-align: center;
       line-height: 1.2;
@@ -149,28 +201,12 @@
     }
 
     .btn-primary {
-      background: #c99545 !important;
+      background: var(--gold) !important;
       color: #25170f !important;
       -webkit-text-fill-color: #25170f !important;
-      box-shadow: 0 14px 32px rgba(199, 150, 75, 0.28);
+      box-shadow: 0 16px 34px rgba(210, 162, 77, 0.32);
       min-width: 260px;
-      white-space: nowrap;
-    }
-
-    .btn-primary::before {
-      content: attr(data-label);
-      color: #25170f !important;
-      -webkit-text-fill-color: #25170f !important;
-      opacity: 1 !important;
-      visibility: visible !important;
-      display: inline-block !important;
-      position: relative !important;
-      z-index: 99 !important;
-      font-family: Arial, sans-serif !important;
-      font-size: 16px !important;
-      font-weight: 700 !important;
-      line-height: 1.2 !important;
-      white-space: nowrap !important;
+      font-size: 16px;
     }
 
     .btn-primary:hover {
@@ -193,17 +229,6 @@
       backdrop-filter: blur(8px);
     }
 
-    .btn-secondary::before {
-      content: attr(data-label);
-      color: #fff !important;
-      -webkit-text-fill-color: #fff !important;
-      font-family: Arial, sans-serif !important;
-      font-size: 16px !important;
-      font-weight: 700 !important;
-      line-height: 1.2 !important;
-      white-space: nowrap !important;
-    }
-
     .btn-secondary:visited,
     .btn-secondary:hover,
     .btn-secondary:active,
@@ -213,7 +238,7 @@
     }
 
     section {
-      padding: 84px 20px;
+      padding: 78px 20px;
     }
 
     .container {
@@ -236,20 +261,24 @@
       border: 1px solid var(--line);
     }
 
+    .intro-card h2 {
+      max-width: 620px;
+    }
+
     .section-label {
       font-family: Arial, sans-serif;
       color: var(--gold-dark);
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0;
       font-weight: 700;
       font-size: 13px;
       margin-bottom: 12px;
     }
 
     h2 {
-      font-size: clamp(32px, 4vw, 52px);
+      font-size: 46px;
       line-height: 1.04;
-      letter-spacing: -0.035em;
+      letter-spacing: 0;
       margin: 0 0 18px;
       font-weight: 500;
     }
@@ -259,6 +288,7 @@
       line-height: 1.2;
       margin: 0 0 10px;
       font-weight: 500;
+      letter-spacing: 0;
     }
 
     p {
@@ -267,9 +297,17 @@
       font-size: 18px;
     }
 
+    .section-intro {
+      max-width: 760px;
+    }
+
+    .section-intro p {
+      max-width: 720px;
+    }
+
     .facts {
-      background: var(--soft);
-      border-radius: 20px;
+      background: linear-gradient(180deg, var(--mist), #ffffff);
+      border-radius: var(--radius);
       padding: 24px;
       border: 1px solid var(--line);
       font-family: Arial, sans-serif;
@@ -288,7 +326,7 @@
       grid-template-columns: 100px 1fr;
       gap: 16px;
       align-items: start;
-      border-bottom: 1px solid rgba(156, 110, 46, 0.18);
+      border-bottom: 1px solid rgba(36, 88, 97, 0.16);
       padding-bottom: 12px;
       color: var(--muted);
     }
@@ -316,22 +354,35 @@
     .faq-item {
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 22px;
+      border-radius: var(--radius);
       padding: 26px;
       box-shadow: 0 10px 28px rgba(42, 33, 28, 0.06);
     }
 
+    .mini-mark,
     .icon {
       width: 46px;
       height: 46px;
-      border-radius: 50%;
+      border-radius: var(--radius);
       display: grid;
       place-items: center;
-      background: var(--soft);
-      color: var(--chocolate);
-      font-size: 23px;
+      background: var(--mist);
+      color: var(--river);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
       margin-bottom: 18px;
       border: 1px solid var(--line);
+    }
+
+    .feature-card:nth-child(2) .mini-mark {
+      background: #f7edf0;
+      color: var(--wine);
+    }
+
+    .feature-card:nth-child(3) .mini-mark {
+      background: var(--soft);
+      color: var(--gold-dark);
     }
 
     .split {
@@ -342,19 +393,33 @@
     }
 
     .image-frame {
-      border-radius: 28px;
+      border-radius: 14px;
       overflow: hidden;
       box-shadow: var(--shadow);
       background: var(--soft);
-      min-height: 420px;
+      aspect-ratio: 4 / 3;
       border: 1px solid var(--line);
     }
 
     .image-frame img {
       width: 100%;
       height: 100%;
-      min-height: 420px;
       object-fit: cover;
+    }
+
+    .section-cta {
+      margin-top: 28px;
+    }
+
+    .cta-note {
+      margin: 12px 0 0;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .on-dark .cta-note {
+      color: rgba(255,255,255,0.76);
     }
 
     .steps {
@@ -370,7 +435,7 @@
       color: var(--gold-dark);
       margin-bottom: 10px;
       font-size: 14px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0;
     }
 
     .step p,
@@ -411,12 +476,12 @@
       object-fit: cover;
     }
 
-    .price-box {
+    .booking-panel {
       margin-top: 32px;
-      background: var(--chocolate);
+      background: linear-gradient(120deg, var(--chocolate), #183f46);
       color: #fff;
-      border-radius: 28px;
-      padding: clamp(30px, 5vw, 50px);
+      border-radius: 14px;
+      padding: 42px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 28px;
@@ -424,26 +489,20 @@
       box-shadow: var(--shadow);
     }
 
-    .price-box p {
+    .booking-panel p {
       color: rgba(255,255,255,0.78);
     }
 
-    .price {
-      text-align: right;
+    .booking-panel .cta-row {
+      margin-top: 0;
+      justify-content: flex-end;
+    }
+
+    .booking-trust {
+      margin-top: 14px;
       font-family: Arial, sans-serif;
-    }
-
-    .price .amount {
-      font-size: clamp(42px, 6vw, 68px);
-      line-height: 1;
-      font-weight: 800;
-      color: var(--gold);
-    }
-
-    .price .note {
-      color: rgba(255,255,255,0.72);
       font-size: 14px;
-      margin-top: 8px;
+      color: rgba(255,255,255,0.76);
     }
 
     .faq-grid {
@@ -455,12 +514,19 @@
 
     .final-cta {
       text-align: center;
-      background:
-        linear-gradient(120deg, rgba(75,36,24,0.88), rgba(42,33,28,0.82)),
-        url('images/view.jpg') center/cover no-repeat;
+      background-color: var(--chocolate);
+      background-image:
+        linear-gradient(120deg, rgba(75,36,24,0.9), rgba(24,63,70,0.82)),
+        url('images/view-1800.jpg');
+      background-image:
+        linear-gradient(120deg, rgba(75,36,24,0.9), rgba(24,63,70,0.82)),
+        image-set(url('images/view-900.jpg') 1x, url('images/view-1800.jpg') 2x);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
       color: #fff;
-      border-radius: 34px;
-      padding: clamp(42px, 8vw, 86px) 24px;
+      border-radius: 14px;
+      padding: 68px 24px;
       box-shadow: var(--shadow);
     }
 
@@ -469,6 +535,10 @@
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .final-cta .cta-row {
+      justify-content: center;
     }
 
     footer {
@@ -483,10 +553,14 @@
       display: none;
     }
 
+    .mobile-sticky-cta {
+      display: none;
+    }
+
     @media (max-width: 920px) {
       .intro-card,
       .split,
-      .price-box,
+      .booking-panel,
       .host-card {
         grid-template-columns: 1fr;
       }
@@ -497,8 +571,16 @@
         grid-template-columns: 1fr;
       }
 
-      .price {
-        text-align: left;
+      h1 {
+        font-size: 64px;
+      }
+
+      h2 {
+        font-size: 38px;
+      }
+
+      .booking-panel .cta-row {
+        justify-content: flex-start;
       }
 
       .host-photo {
@@ -509,16 +591,68 @@
 
     @media (max-width: 560px) {
       section {
-        padding: 62px 16px;
+        padding: 58px 16px;
       }
 
       .hero {
-        min-height: 86vh;
-        padding: 24px 14px;
+        min-height: auto;
+        padding: 48px 16px 78px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      h2 {
+        font-size: 34px;
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+      }
+
+      .hero-copy {
+        font-size: 16px;
+      }
+
+      .hero-inner,
+      .hero-overline,
+      h1,
+      .hero-subtitle,
+      .hero-copy,
+      .trust-line,
+      .hero .cta-row,
+      .hero .btn {
+        width: 100%;
+        max-width: 330px;
+      }
+
+      .hero-inner {
+        margin: 0;
+      }
+
+      .hero-overline {
+        display: block;
+        white-space: normal;
+        line-height: 1.3;
+      }
+
+      .trust-line {
+        gap: 6px;
+      }
+
+      .trust-line li {
+        font-size: 13px;
+        padding: 7px 10px;
       }
 
       .intro-card {
         margin-top: -54px;
+        padding: 24px;
+      }
+
+      .image-frame {
+        aspect-ratio: 4 / 5;
       }
 
       .facts li {
@@ -536,13 +670,56 @@
         white-space: normal;
       }
 
-      .btn-primary::before,
-      .btn-secondary::before {
-        white-space: normal !important;
-      }
-
       .mobile-break {
         display: block;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-inner,
+      .hero-overline,
+      h1,
+      .hero-subtitle,
+      .hero-copy,
+      .trust-line,
+      .hero .cta-row,
+      .hero .btn {
+        max-width: 288px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .mobile-sticky-cta {
+        display: block;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 50;
+        padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(255, 253, 249, 0.96);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 -12px 28px rgba(36, 25, 20, 0.1);
+        backdrop-filter: blur(12px);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(110%);
+        transition: opacity 0.18s ease, transform 0.18s ease;
+      }
+
+      body.show-mobile-cta {
+        padding-bottom: 82px;
+      }
+
+      body.show-mobile-cta .mobile-sticky-cta {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .mobile-sticky-cta .btn {
+        width: 100%;
+        min-height: 50px;
       }
     }
   </style>
@@ -553,45 +730,53 @@
 
     <header class="hero" id="top">
       <div class="hero-inner">
-        <div class="eyebrow">Small-group pastry & wine experience near Porto</div>
+        <div class="hero-overline">Small-group pastry &amp; wine experience near Porto</div>
 
-        <h1>Eclairs of<br class="mobile-break"> the Douro</h1>
+        <h1>Eclairs of the<br class="mobile-break"> Douro</h1>
 
-        <p class="hero-subtitle">
-          A chic 2.5-hour evening where you make elegant chocolate-glazed éclairs,
-          enjoy Portuguese wine and snacks, and relax with beautiful Douro views.
+        <p class="hero-subtitle">A small-group pastry &amp; wine evening near Porto</p>
+
+        <p class="hero-copy">
+          Make elegant chocolate-glazed éclairs with Anat, enjoy Portuguese wine and light snacks,
+          and relax with a beautiful Douro view — just 10–15 minutes from central Porto by Uber or Bolt.
         </p>
 
+        <ul class="trust-line" aria-label="Experience details">
+          <li>2.5 hours</li>
+          <li>Up to 6 guests</li>
+          <li>English</li>
+          <li>Wine included</li>
+          <li>Secure booking via Viator</li>
+        </ul>
+
         <div class="cta-row">
-          <a class="btn btn-primary"
-             data-label="Book on Viator"
-             aria-label="Book on Viator"
+          <a class="btn btn-primary viator-cta"
+             data-cta-location="hero"
+             aria-label="Check availability on Viator"
              href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
              target="_blank"
-             rel="noopener"></a>
+             rel="noopener">Check availability on Viator</a>
 
           <a class="btn btn-secondary"
-             data-label="See the experience"
-             aria-label="See the experience"
-             href="#experience"></a>
+             aria-label="See what you'll do"
+             href="#what-youll-do">See what you'll do</a>
         </div>
       </div>
     </header>
 
-    <section class="container" aria-label="Introduction">
+    <section class="container" aria-label="Location and essentials">
       <div class="intro-card">
         <div>
-          <div class="section-label">A sweet Porto evening</div>
-          <h2>Make éclairs. Sip wine. Watch the Douro glow.</h2>
+          <div class="section-label">Close to Porto</div>
+          <h2>Close to Porto, easy to reach</h2>
 
           <p>
-            Join Anat in an intimate dedicated kitchen space in Valbom, just outside Porto,
-            for a relaxed pastry experience designed for couples, friends, and curious travelers.
+            The experience takes place in Valbom/Gondomar, just across the Douro from Porto.
+            Most guests arrive by Uber or Bolt, usually around 10–15 minutes from central Porto.
           </p>
 
           <p>
-            You will learn how éclairs come together, prepare the cream, fill and glaze your own
-            chocolate éclairs, then enjoy them with wine, light snacks, and a beautiful Douro view.
+            The exact address is shared after booking through Viator.
           </p>
         </div>
 
@@ -599,10 +784,11 @@
           <ul>
             <li><strong>Duration</strong><span>2.5 hours</span></li>
             <li><strong>Group size</strong><span>Up to 6 guests</span></li>
-            <li><strong>Location</strong><span>Valbom, Porto area</span></li>
-            <li><strong>Includes</strong><span>Pastry workshop, wine, snacks & tasting</span></li>
+            <li><strong>Location</strong><span>Valbom/Gondomar, near Porto</span></li>
+            <li><strong>Travel</strong><span>10–15 minutes by Uber or Bolt</span></li>
+            <li><strong>Includes</strong><span>Éclairs, wine, light snacks &amp; tasting</span></li>
             <li><strong>Language</strong><span>English</span></li>
-            <li><strong>Booking</strong><span>Available through Viator</span></li>
+            <li><strong>Booking</strong><span>Secure booking through Viator</span></li>
           </ul>
         </aside>
       </div>
@@ -610,67 +796,82 @@
 
     <section id="experience">
       <div class="container">
-        <div class="section-label">Why guests love it</div>
-        <h2>A different kind of Porto experience</h2>
+        <div class="section-intro">
+          <div class="section-label">Why this is special</div>
+          <h2>A different kind of Porto evening</h2>
+          <p>
+            This is not a large cooking school or a standard tourist activity. It is a small,
+            personal pastry-and-wine evening near the Douro — designed for travelers who want
+            something warm, beautiful, and memorable.
+          </p>
+        </div>
 
         <div class="grid-3">
           <article class="feature-card">
-            <div class="icon">🍫</div>
-            <h3>Elegant chocolate éclairs</h3>
+            <div class="mini-mark">01</div>
+            <h3>Make real éclairs from scratch</h3>
             <p>
-              Learn the steps behind classic choux pastry, smooth pastry cream,
-              filling, and a clean chocolate glaze.
+              Learn the steps behind choux pastry, pastry cream, filling, and a smooth
+              chocolate glaze.
             </p>
           </article>
 
           <article class="feature-card">
-            <div class="icon">🍷</div>
-            <h3>Wine & relaxed tasting</h3>
+            <div class="mini-mark">02</div>
+            <h3>Enjoy Portuguese wine and light snacks</h3>
             <p>
-              While the éclairs bake and cool, enjoy Portuguese wine, cheese,
-              crackers, and easy conversation.
+              Sip Portuguese wine while the éclairs bake and cool, with snacks and time to linger.
             </p>
           </article>
 
           <article class="feature-card">
-            <div class="icon">🌉</div>
-            <h3>Douro views near Porto</h3>
+            <div class="mini-mark">03</div>
+            <h3>Relax in a small group with a Douro view</h3>
             <p>
-              A cozy, intimate setting in Valbom with a view that makes the evening
-              feel special and memorable.
+              Up to 6 guests keeps the evening personal, relaxed, and easy to enjoy.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="cream-section">
+    <section class="cream-section" id="what-youll-do">
       <div class="container split">
         <div class="image-frame">
-          <img src="images/ecl.jpg" alt="Chocolate glazed éclairs prepared during the experience">
+          <img
+            src="images/ecl-1400.jpg"
+            srcset="images/ecl-700.jpg 700w, images/ecl-1400.jpg 1400w"
+            sizes="(max-width: 920px) 100vw, 50vw"
+            width="1400"
+            height="1866"
+            loading="lazy"
+            decoding="async"
+            alt="Chocolate-glazed éclairs prepared during the experience">
         </div>
 
         <div>
           <div class="section-label">What you will do</div>
-          <h2>Hands-on, but relaxed.</h2>
+          <h2>Make, fill, glaze, then linger.</h2>
 
           <p>
-            This is not a stressful technical class. It is a beautiful evening with enough
-            hands-on pastry work to feel real, and enough wine, tasting, and conversation
-            to feel like a treat.
+            You will prepare the pastry, make the cream, fill and glaze your own chocolate
+            éclairs, then enjoy them with Portuguese wine, light snacks, and the Douro view.
           </p>
 
           <p>
-            Perfect for visitors who want something more personal than a restaurant dinner
-            and more special than a standard tour.
+            It is hands-on enough to feel real, but relaxed enough to feel like a special
+            Porto evening rather than a technical class.
           </p>
 
-          <a class="btn btn-primary"
-             data-label="Book on Viator"
-             aria-label="Book on Viator"
+          <div class="section-cta">
+            <a class="btn btn-primary viator-cta"
+             data-cta-location="mid_page"
+             aria-label="Reserve your spot on Viator"
              href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
              target="_blank"
-             rel="noopener"></a>
+             rel="noopener">Reserve your spot on Viator</a>
+            <p class="cta-note">Secure booking · Small group · Wine included</p>
+          </div>
         </div>
       </div>
     </section>
@@ -707,7 +908,7 @@
 
           <article class="step">
             <div class="step-number">05</div>
-            <h3>Fill & glaze</h3>
+            <h3>Fill &amp; glaze</h3>
             <p>Fill, glaze, photograph, and enjoy your elegant éclairs.</p>
           </article>
         </div>
@@ -718,35 +919,47 @@
       <div class="container">
         <div class="host-card">
           <div class="host-photo">
-            <img src="images/AnatCo.jpg" alt="Anat Gazit, host of Eclairs of the Douro">
+            <img
+              src="images/AnatCo.jpg"
+              width="720"
+              height="761"
+              loading="lazy"
+              decoding="async"
+              alt="Anat Gazit, host of Eclairs of the Douro">
           </div>
 
           <div>
             <div class="section-label">Your host</div>
-            <h2>Hosted by Anat Gazit</h2>
+            <h2>Hosted by Anat</h2>
 
             <p>
-              Anat is a Cordon Bleu-trained baker and experienced educator who loves creating warm,
-              personal, and beautiful food experiences. Her style is calm, generous, and deeply attentive —
-              making guests feel comfortable from the first minute.
+              Anat brings together professional pastry training from Le Cordon Bleu Paris with years
+              of experience creating warm, hands-on experiences for families, friends, and travelers.
+              The evening is personal, relaxed, and designed for a small group — so every guest can
+              take part, ask questions, and enjoy the process.
             </p>
           </div>
         </div>
 
-        <div class="price-box">
+        <div class="booking-panel on-dark">
           <div>
             <div class="section-label" style="color:#d9a85c;">Small group, premium feel</div>
-            <h2>Bookings are now open through Viator</h2>
+            <h2>Ready to join?</h2>
 
             <p>
-              Each evening is limited to 6 guests, so availability is intentionally small.
-              Book your spot securely through Viator.
+              Small groups are limited to 6 guests, so availability can be limited.
+              Book securely through Viator to choose your date and reserve your spot.
             </p>
+            <div class="booking-trust">Secure booking · Mobile ticket · Small group experience</div>
           </div>
 
-          <div class="price">
-            <div class="amount">Viator</div>
-            <div class="note">secure booking<br>limited small groups</div>
+          <div class="cta-row">
+            <a class="btn btn-primary viator-cta"
+               data-cta-location="host_section"
+               aria-label="Check availability on Viator"
+               href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
+               target="_blank"
+               rel="noopener">Check availability on Viator</a>
           </div>
         </div>
       </div>
@@ -759,32 +972,48 @@
 
         <div class="faq-grid">
           <article class="faq-item">
-            <h3>Where is it?</h3>
+            <h3>How far is it from Porto?</h3>
             <p>
-              The experience takes place in Valbom, in the Porto area. Most guests arrive by Uber or Bolt.
-              The exact address is shared after booking.
+              The experience is in Valbom/Gondomar, usually around 10–15 minutes by Uber or Bolt
+              from central Porto.
             </p>
           </article>
 
           <article class="faq-item">
             <h3>Do I need baking experience?</h3>
             <p>
-              No. The experience is designed to be friendly and accessible, even if you have never made éclairs before.
+              No. The experience is designed for beginners and curious travelers. Anat guides the
+              process step by step.
             </p>
           </article>
 
           <article class="faq-item">
-            <h3>Is it a full dinner?</h3>
+            <h3>Is wine included?</h3>
             <p>
-              No. It includes wine, cheese, crackers, and dessert tasting.
-              It works beautifully before or after a light meal.
+              Yes, Portuguese wine and light snacks are included.
             </p>
           </article>
 
           <article class="faq-item">
-            <h3>Can we book a private group?</h3>
+            <h3>How many people are in the group?</h3>
             <p>
-              Yes. Private groups of up to 6 guests can request a custom date, depending on availability.
+              The group is small and limited to up to 6 guests.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>How do I book?</h3>
+            <p>
+              Booking is handled securely through Viator. Click “Check availability on Viator”
+              to choose your date and reserve your spot.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Is this suitable for couples or friends?</h3>
+            <p>
+              Yes. It is especially good for couples, friends, and small groups looking for a
+              relaxed evening experience near Porto.
             </p>
           </article>
         </div>
@@ -797,25 +1026,73 @@
           <div class="section-label" style="color:#d9a85c;">Ready for something special?</div>
           <h2>Join the next Eclairs of the Douro evening</h2>
           <p>
-            Book your spot securely through Viator, and enjoy a relaxed pastry-and-wine evening near Porto.
+            Make éclairs with Anat, sip Portuguese wine, and spend a beautiful small-group evening
+            near the Douro, just minutes from central Porto.
           </p>
 
           <div class="cta-row">
-            <a class="btn btn-primary"
-               data-label="Book on Viator"
-               aria-label="Book on Viator"
+            <a class="btn btn-primary viator-cta"
+               data-cta-location="bottom"
+               aria-label="Check availability on Viator"
                href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
                target="_blank"
-               rel="noopener"></a>
+               rel="noopener">Check availability on Viator</a>
           </div>
+          <p class="cta-note">Secure booking · Mobile ticket · Up to 6 guests</p>
         </div>
       </div>
     </section>
 
   </main>
 
+  <div class="mobile-sticky-cta" aria-label="Book through Viator">
+    <a class="btn btn-primary viator-cta"
+       data-cta-location="sticky_mobile"
+       aria-label="Check availability on Viator"
+       href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
+       target="_blank"
+       rel="noopener">Check availability on Viator</a>
+  </div>
+
   <footer>
     Cooking an Experience · Valbom, Porto area · Eclairs of the Douro
   </footer>
+
+  <script>
+    (function () {
+      var eventName = 'click_viator_check_availability';
+
+      function trackViatorClick(event) {
+        var link = event.currentTarget;
+        var params = {
+          cta_location: link.getAttribute('data-cta-location') || 'unknown',
+          destination: 'viator'
+        };
+
+        if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push(Object.assign({ event: eventName }, params));
+        }
+
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', eventName, params);
+        }
+      }
+
+      document.querySelectorAll('.viator-cta').forEach(function (link) {
+        link.addEventListener('click', trackViatorClick);
+      });
+
+      var mobileStickyQuery = window.matchMedia('(max-width: 760px)');
+
+      function syncMobileStickyCta() {
+        var shouldShow = mobileStickyQuery.matches && window.scrollY > Math.max(360, window.innerHeight * 0.7);
+        document.body.classList.toggle('show-mobile-cta', shouldShow);
+      }
+
+      window.addEventListener('scroll', syncMobileStickyCta, { passive: true });
+      window.addEventListener('resize', syncMobileStickyCta);
+      syncMobileStickyCta();
+    }());
+  </script>
 </body>
 </html>
