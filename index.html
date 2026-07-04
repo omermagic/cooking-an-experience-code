@@ -15,6 +15,7 @@
     gtag('js', new Date());
 
     gtag('config', 'G-N7TMBFH53X');
+    gtag('config', 'AW-18164522007');
   </script>
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -1225,6 +1226,10 @@
 
         if (typeof window.gtag === 'function') {
           window.gtag('event', eventName, params);
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-18164522007/gGi0CNbjx8kcEJe4wtVD',
+            cta_location: params.cta_location
+          });
         }
       }
 
