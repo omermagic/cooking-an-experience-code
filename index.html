@@ -260,6 +260,18 @@
       -webkit-text-fill-color: #fff !important;
     }
 
+    .mobile-hero-cta {
+      display: none !important;
+    }
+
+    .mobile-audience-copy {
+      display: none;
+    }
+
+    .mobile-below-image-cta {
+      display: none;
+    }
+
     .text-link {
       display: inline-flex;
       align-items: center;
@@ -707,11 +719,11 @@
       .hero .cta-row,
       .hero .btn {
         width: 100%;
-        max-width: 330px;
+        max-width: 304px;
       }
 
       .hero-inner {
-        width: min(100%, 330px);
+        width: min(100%, 304px);
         margin: 0 auto;
       }
 
@@ -719,7 +731,15 @@
         display: block;
         white-space: normal;
         line-height: 1.3;
+        font-size: 12px;
         margin-bottom: 14px;
+      }
+
+      .hero-overline,
+      .hero-subtitle,
+      .hero .audience-fit,
+      .hero .btn {
+        overflow-wrap: anywhere;
       }
 
       .trust-line {
@@ -767,10 +787,18 @@
         object-fit: cover;
       }
 
+      .mobile-below-image-cta {
+        display: block;
+        width: 100%;
+        max-width: 304px;
+        margin: 12px auto 0;
+      }
+
       .hero .btn-primary {
         min-height: 58px;
         padding: 16px 18px;
         font-size: 16px;
+        white-space: normal;
       }
 
       .intro-card {
@@ -808,7 +836,8 @@
       .trust-line,
       .hero .cta-row,
       .hero .btn,
-      .hero-mobile-image {
+      .hero-mobile-image,
+      .mobile-below-image-cta {
         max-width: 288px;
       }
 
@@ -818,6 +847,36 @@
     }
 
     @media (max-width: 760px) {
+      .hero .cta-row {
+        gap: 10px;
+      }
+
+      .hero .desktop-hero-cta {
+        display: none !important;
+      }
+
+      .hero .mobile-hero-cta {
+        display: inline-flex !important;
+      }
+
+      .hero .mobile-hero-viator {
+        min-height: 52px;
+        padding: 14px 16px;
+        font-size: 15px;
+      }
+
+      .desktop-audience-copy {
+        display: none;
+      }
+
+      .mobile-audience-copy {
+        display: inline;
+      }
+
+      .trust-line .secure-chip {
+        display: none;
+      }
+
       .mobile-sticky-cta {
         display: block;
         position: fixed;
@@ -859,22 +918,32 @@
 
     <header class="hero" id="top">
       <div class="hero-inner">
-        <div class="hero-overline">Small-group pastry &amp; wine experience near Porto</div>
+        <div class="hero-overline">Small-group French baking &amp; wine experience near Porto</div>
 
         <h1>Eclairs of the<br class="mobile-break"> Douro</h1>
 
-        <p class="hero-subtitle">Make éclairs, sip Portuguese wine, and enjoy a relaxed Douro evening.</p>
+        <p class="hero-subtitle">Make French éclairs, sip Portuguese wine, and enjoy a relaxed Douro evening.</p>
 
         <p class="hero-copy">
-          Make elegant chocolate-glazed éclairs with Anat, enjoy Portuguese wine and light snacks,
+          Join Anat for a hands-on French baking session focused on elegant chocolate-glazed éclairs, enjoy Portuguese wine and light snacks,
           and relax with a beautiful Douro view—just 10–15 minutes from central Porto.
         </p>
 
         <p class="hero-price">Special introductory price — €45 per person</p>
 
         <div class="cta-row">
-          <a class="btn btn-primary viator-cta"
+          <a class="btn btn-primary whatsapp-cta mobile-hero-cta mobile-hero-whatsapp"
              data-cta-location="hero"
+             data-cta-destination="whatsapp"
+             data-event-name="mobile_whatsapp_cta_click"
+             aria-label="Check availability and reserve on WhatsApp"
+             href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%E2%80%99m%20interested%20in%20the%20Eclairs%20of%20the%20Douro%20French%20baking%20experience.%20We%20are%20___%20people%20and%20we%E2%80%99re%20in%20Porto%20on%20___%20.%20Is%20there%20availability%3F"
+             target="_blank"
+             rel="noopener">Check availability &amp; reserve on WhatsApp</a>
+          <a class="btn btn-primary viator-cta desktop-hero-cta"
+             data-cta-location="hero"
+             data-cta-destination="viator"
+             data-event-name="desktop_viator_cta_click"
              aria-label="Check availability on Viator"
              href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
              target="_blank"
@@ -882,7 +951,8 @@
         </div>
 
         <p class="audience-fit">
-          Perfect for couples, friends, solo travelers, and anyone looking for a unique evening near Porto.
+          <span class="desktop-audience-copy">Perfect for couples, friends, solo travelers, and anyone looking for a unique evening near Porto.</span>
+          <span class="mobile-audience-copy">Fast reply · Small groups · Just minutes from central Porto</span>
         </p>
 
         <ul class="trust-line" aria-label="Experience details">
@@ -901,6 +971,16 @@
             loading="eager"
             decoding="async"
             alt="Douro view near the Eclairs of the Douro experience">
+        </div>
+        <div class="mobile-below-image-cta">
+          <a class="btn btn-secondary viator-cta mobile-hero-viator"
+             data-cta-location="hero_mobile_secondary"
+             data-cta-destination="viator"
+             data-event-name="mobile_viator_secondary_click"
+             aria-label="Prefer instant booking? Book on Viator"
+             href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
+             target="_blank"
+             rel="noopener">Prefer instant booking? Book on Viator</a>
         </div>
         <!-- TODO: Show only when there are enough public Viator reviews: <p class="social-proof">⭐ 5.0 on Viator</p> -->
       </div>
@@ -1196,13 +1276,15 @@
 
   </main>
 
-  <div class="mobile-sticky-cta" aria-label="Book through Viator">
-    <a class="btn btn-primary viator-cta"
+  <div class="mobile-sticky-cta" aria-label="Reserve through WhatsApp">
+    <a class="btn btn-primary whatsapp-cta"
        data-cta-location="sticky_mobile"
-       aria-label="Check availability on Viator"
-       href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
+       data-cta-destination="whatsapp"
+       data-event-name="mobile_whatsapp_cta_click"
+       aria-label="Check availability and reserve on WhatsApp"
+       href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%E2%80%99m%20interested%20in%20the%20Eclairs%20of%20the%20Douro%20French%20baking%20experience.%20We%20are%20___%20people%20and%20we%E2%80%99re%20in%20Porto%20on%20___%20.%20Is%20there%20availability%3F"
        target="_blank"
-       rel="noopener">Check availability on Viator</a>
+       rel="noopener">Check availability &amp; reserve on WhatsApp</a>
   </div>
 
   <footer>
@@ -1211,13 +1293,15 @@
 
   <script>
     (function () {
-      var eventName = 'click_viator_check_availability';
+      var defaultEventName = 'click_viator_check_availability';
+      var googleAdsConversionId = 'AW-18164522007/gGi0CNbjx8kcEJe4wtVD';
 
-      function trackViatorClick(event) {
+      function trackCtaClick(event) {
         var link = event.currentTarget;
+        var eventName = link.getAttribute('data-event-name') || defaultEventName;
         var params = {
           cta_location: link.getAttribute('data-cta-location') || 'unknown',
-          destination: 'viator'
+          destination: link.getAttribute('data-cta-destination') || 'viator'
         };
 
         if (Array.isArray(window.dataLayer)) {
@@ -1227,14 +1311,15 @@
         if (typeof window.gtag === 'function') {
           window.gtag('event', eventName, params);
           window.gtag('event', 'conversion', {
-            send_to: 'AW-18164522007/gGi0CNbjx8kcEJe4wtVD',
-            cta_location: params.cta_location
+            send_to: googleAdsConversionId,
+            cta_location: params.cta_location,
+            destination: params.destination
           });
         }
       }
 
-      document.querySelectorAll('.viator-cta').forEach(function (link) {
-        link.addEventListener('click', trackViatorClick);
+      document.querySelectorAll('.viator-cta, .whatsapp-cta').forEach(function (link) {
+        link.addEventListener('click', trackCtaClick);
       });
 
       var mobileStickyQuery = window.matchMedia('(max-width: 760px)');
