@@ -305,15 +305,19 @@
       background: var(--paper);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: clamp(26px, 5vw, 52px);
+      padding: clamp(26px, 4vw, 44px);
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 36px;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr);
+      gap: 42px;
+      align-items: start;
       border: 1px solid var(--line);
     }
 
     .intro-card h2 {
       max-width: 620px;
+      color: var(--ink);
+      background: none;
+      -webkit-text-fill-color: var(--ink);
     }
 
     .section-label {
@@ -359,7 +363,7 @@
     .facts {
       background: linear-gradient(180deg, var(--mist), #ffffff);
       border-radius: var(--radius);
-      padding: 24px;
+      padding: 20px;
       border: 1px solid var(--line);
       font-family: Arial, sans-serif;
     }
@@ -369,16 +373,16 @@
       padding: 0;
       margin: 0;
       display: grid;
-      gap: 14px;
+      gap: 8px;
     }
 
     .facts li {
       display: grid;
-      grid-template-columns: 100px 1fr;
-      gap: 16px;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 12px;
       align-items: start;
       border-bottom: 1px solid rgba(36, 88, 97, 0.16);
-      padding-bottom: 12px;
+      padding-bottom: 8px;
       color: var(--muted);
     }
 
@@ -390,6 +394,10 @@
     .facts strong {
       color: var(--ink);
       white-space: nowrap;
+    }
+
+    .facts span {
+      line-height: 1.4;
     }
 
     .grid-3 {
@@ -993,7 +1001,7 @@
           <h2>Just minutes from central Porto</h2>
 
           <p>
-            The experience takes place in Valbom/Gondomar, just across the Douro from Porto.
+            The experience takes place in Valbom, with a beautiful Douro view, just across the river from Porto.
             Most guests arrive by Uber or Bolt, usually a short ride from central Porto.
           </p>
         </div>
@@ -1002,12 +1010,9 @@
           <ul>
             <li><strong>Duration</strong><span>2.5 hours</span></li>
             <li><strong>Group size</strong><span>Up to 6 guests</span></li>
-            <li><strong>Location</strong><span>Valbom/Gondomar, near Porto</span></li>
+            <li><strong>Location</strong><span>Valbom, Douro view</span></li>
             <li><strong>Travel</strong><span>Few minutes by Uber or Bolt</span></li>
             <li><strong>Includes</strong><span>Éclairs, wine, light snacks &amp; tasting</span></li>
-            <li><strong>Price</strong><span>Special introductory price — €45 per person</span></li>
-            <li><strong>Language</strong><span>English</span></li>
-            <li><strong>Booking</strong><span>Secure booking through Viator</span></li>
           </ul>
         </aside>
       </div>
@@ -1200,7 +1205,7 @@
           <article class="faq-item">
             <h3>How far is it from Porto?</h3>
             <p>
-              The experience is in Valbom/Gondomar, usually around 10 minutes by Uber or Bolt
+              The experience is in Valbom, with a Douro view, usually around 10 minutes by Uber or Bolt
               from central Porto.
             </p>
           </article>
@@ -1284,7 +1289,7 @@
   </div>
 
   <footer>
-    Cooking an Experience · Valbom, Porto area · Eclairs of the Douro
+    Cooking an Experience · Valbom · Douro view · Eclairs of the Douro
   </footer>
 
   <script>
