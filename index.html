@@ -654,6 +654,23 @@
       color: var(--muted);
       font-family: Arial, sans-serif;
       font-size: 14px;
+      position: relative;
+    }
+
+    .signature-mark {
+      position: absolute;
+      right: 18px;
+      bottom: 12px;
+      width: 58px;
+      height: auto;
+      opacity: 0.34;
+      transform: rotate(-3deg);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .signature-mark:hover {
+      opacity: 0.72;
+      transform: rotate(-3deg) translateY(-2px);
     }
 
     .mobile-break {
@@ -1298,6 +1315,14 @@
 
   <footer>
     Cooking an Experience · Valbom · Douro view · Eclairs of the Douro
+    <img
+      class="signature-mark"
+      src="images/anat-signature-snoopy.png"
+      width="320"
+      height="320"
+      loading="lazy"
+      decoding="async"
+      alt="Life is for fun signature">
   </footer>
 
   <script>
