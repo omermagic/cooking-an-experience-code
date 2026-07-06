@@ -969,6 +969,7 @@
              data-cta-location="hero"
              data-cta-destination="whatsapp"
              data-event-name="mobile_whatsapp_cta_click"
+             data-base-whatsapp-text="Hi Anat, I’m interested in the Eclairs of the Douro French baking experience. We are ___ people and we’re in Porto on ___ . Is there availability?"
              aria-label="Check availability and reserve on WhatsApp"
              href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%E2%80%99m%20interested%20in%20the%20Eclairs%20of%20the%20Douro%20French%20baking%20experience.%20We%20are%20___%20people%20and%20we%E2%80%99re%20in%20Porto%20on%20___%20.%20Is%20there%20availability%3F"
              target="_blank"
@@ -1307,6 +1308,7 @@
        data-cta-location="sticky_mobile"
        data-cta-destination="whatsapp"
        data-event-name="mobile_whatsapp_cta_click"
+       data-base-whatsapp-text="Hi Anat, I’m interested in the Eclairs of the Douro French baking experience. We are ___ people and we’re in Porto on ___ . Is there availability?"
        aria-label="Check availability and reserve on WhatsApp"
        href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%E2%80%99m%20interested%20in%20the%20Eclairs%20of%20the%20Douro%20French%20baking%20experience.%20We%20are%20___%20people%20and%20we%E2%80%99re%20in%20Porto%20on%20___%20.%20Is%20there%20availability%3F"
        target="_blank"
@@ -1329,6 +1331,34 @@
     (function () {
       var defaultEventName = 'click_viator_check_availability';
       var googleAdsConversionId = 'AW-18164522007/gGi0CNbjx8kcEJe4wtVD';
+      var mobileStickyQuery = window.matchMedia('(max-width: 760px)');
+      var whatsappPhoneNumber = '351937106777';
+      var referralSource = getReferralSource();
+
+      function getReferralSource() {
+        var source = new URLSearchParams(window.location.search).get('ref') || '';
+        return source.trim().replace(/\s+/g, ' ').slice(0, 80);
+      }
+
+      function buildWhatsappHref(message) {
+        return 'https://wa.me/' + whatsappPhoneNumber + '?text=' + encodeURIComponent(message);
+      }
+
+      function syncWhatsappReferral() {
+        document.querySelectorAll('.whatsapp-cta').forEach(function (link) {
+          var message = link.getAttribute('data-base-whatsapp-text');
+
+          if (!message) {
+            return;
+          }
+
+          if (mobileStickyQuery.matches && referralSource) {
+            message += '\n\nReferred by ' + referralSource;
+          }
+
+          link.href = buildWhatsappHref(message);
+        });
+      }
 
       function trackCtaClick(event) {
         var link = event.currentTarget;
@@ -1337,6 +1367,10 @@
           cta_location: link.getAttribute('data-cta-location') || 'unknown',
           destination: link.getAttribute('data-cta-destination') || 'viator'
         };
+
+        if (params.destination === 'whatsapp' && mobileStickyQuery.matches && referralSource) {
+          params.referral_source = referralSource;
+        }
 
         if (Array.isArray(window.dataLayer)) {
           window.dataLayer.push(Object.assign({ event: eventName }, params));
@@ -1356,15 +1390,17 @@
         link.addEventListener('click', trackCtaClick);
       });
 
-      var mobileStickyQuery = window.matchMedia('(max-width: 760px)');
-
       function syncMobileStickyCta() {
         var shouldShow = mobileStickyQuery.matches && window.scrollY > 440;
         document.body.classList.toggle('show-mobile-cta', shouldShow);
       }
 
       window.addEventListener('scroll', syncMobileStickyCta, { passive: true });
-      window.addEventListener('resize', syncMobileStickyCta);
+      window.addEventListener('resize', function () {
+        syncMobileStickyCta();
+        syncWhatsappReferral();
+      });
+      syncWhatsappReferral();
       syncMobileStickyCta();
     }());
   </script>
