@@ -272,6 +272,12 @@
       display: none;
     }
 
+    .mobile-whatsapp-cta,
+    .mobile-copy,
+    .mobile-social-proof {
+      display: none !important;
+    }
+
     .text-link {
       display: inline-flex;
       align-items: center;
@@ -908,6 +914,21 @@
         display: inline;
       }
 
+      .mobile-hidden-viator,
+      .desktop-copy,
+      .desktop-social-proof {
+        display: none !important;
+      }
+
+      .mobile-whatsapp-cta {
+        display: inline-flex !important;
+      }
+
+      .mobile-copy,
+      .mobile-social-proof {
+        display: inline !important;
+      }
+
       .trust-line .secure-chip {
         display: none;
       }
@@ -1030,7 +1051,10 @@
              target="_blank"
              rel="noopener">Prefer instant booking? Book on Viator</a>
         </div>
-        <p class="social-proof">⭐ 5.0 on Viator</p>
+        <p class="social-proof">
+          <span class="desktop-social-proof">⭐ 5.0 on Viator</span>
+          <span class="mobile-social-proof">⭐ 5.0 guest-rated · Reserve on WhatsApp</span>
+        </p>
       </div>
     </header>
 
@@ -1133,12 +1157,21 @@
           </p>
 
           <div class="section-cta">
-            <a class="btn btn-primary viator-cta"
+            <a class="btn btn-primary viator-cta mobile-hidden-viator"
              data-cta-location="mid_page"
              aria-label="Check availability on Viator"
              href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
              target="_blank"
              rel="noopener">Check availability on Viator</a>
+            <a class="btn btn-primary whatsapp-cta mobile-whatsapp-cta"
+               data-cta-location="mid_page_mobile"
+               data-cta-destination="whatsapp"
+               data-event-name="mobile_whatsapp_cta_click"
+               data-base-whatsapp-text="Hi Anat, I’m interested in the Eclairs of the Douro French baking experience. We are ___ people and we’re in Porto on ___ . Is there availability?"
+               aria-label="Check availability and reserve on WhatsApp"
+               href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%E2%80%99m%20interested%20in%20the%20Eclairs%20of%20the%20Douro%20French%20baking%20experience.%20We%20are%20___%20people%20and%20we%E2%80%99re%20in%20Porto%20on%20___%20.%20Is%20there%20availability%3F"
+               target="_blank"
+               rel="noopener">Check availability &amp; reserve on WhatsApp</a>
             <p class="cta-note">Special introductory price — €45 per person · Small group up to 6 guests</p>
           </div>
         </div>
@@ -1217,20 +1250,33 @@
             <h2>Ready to join?</h2>
 
             <p>
-              Each evening is designed for up to 6 guests. Book securely through Viator to choose
-              your date and complete your booking.
+              <span class="desktop-copy">Each evening is designed for up to 6 guests. Book securely through Viator to choose
+              your date and complete your booking.</span>
+              <span class="mobile-copy">Each evening is designed for up to 6 guests. Reserve directly with Anat on WhatsApp to check your date and hold your place.</span>
             </p>
             <div class="booking-price">Special introductory price — €45 per person</div>
-            <div class="booking-trust">Secure booking · Mobile ticket · Small group experience</div>
+            <div class="booking-trust">
+              <span class="desktop-copy">Secure booking · Mobile ticket · Small group experience</span>
+              <span class="mobile-copy">Fast reply · Direct reservation · Small group experience</span>
+            </div>
           </div>
 
           <div class="cta-row">
-            <a class="btn btn-primary viator-cta"
+            <a class="btn btn-primary viator-cta mobile-hidden-viator"
                data-cta-location="host_section"
                aria-label="Check availability on Viator"
                href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
                target="_blank"
                rel="noopener">Check availability on Viator</a>
+            <a class="btn btn-primary whatsapp-cta mobile-whatsapp-cta"
+               data-cta-location="host_section_mobile"
+               data-cta-destination="whatsapp"
+               data-event-name="mobile_whatsapp_cta_click"
+               data-base-whatsapp-text="Hi Anat, I’m interested in the Eclairs of the Douro French baking experience. We are ___ people and we’re in Porto on ___ . Is there availability?"
+               aria-label="Check availability and reserve on WhatsApp"
+               href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%E2%80%99m%20interested%20in%20the%20Eclairs%20of%20the%20Douro%20French%20baking%20experience.%20We%20are%20___%20people%20and%20we%E2%80%99re%20in%20Porto%20on%20___%20.%20Is%20there%20availability%3F"
+               target="_blank"
+               rel="noopener">Check availability &amp; reserve on WhatsApp</a>
           </div>
         </div>
       </div>
@@ -1275,8 +1321,9 @@
           <article class="faq-item">
             <h3>How do I book?</h3>
             <p>
-              Booking is handled securely through Viator. Click “Check availability on Viator”
-              to choose your date and complete your booking.
+              <span class="desktop-copy">Booking is handled securely through Viator. Click “Check availability on Viator”
+              to choose your date and complete your booking.</span>
+              <span class="mobile-copy">Reserve directly with Anat on WhatsApp. Tap “Check availability &amp; reserve on WhatsApp” to send your date and group size.</span>
             </p>
           </article>
 
@@ -1303,14 +1350,26 @@
           <p>A beautiful alternative to another restaurant night in Porto.</p>
 
           <div class="cta-row">
-            <a class="btn btn-primary viator-cta"
+            <a class="btn btn-primary viator-cta mobile-hidden-viator"
                data-cta-location="bottom"
                aria-label="Check availability on Viator"
                href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2"
                target="_blank"
                rel="noopener">Check availability on Viator</a>
+            <a class="btn btn-primary whatsapp-cta mobile-whatsapp-cta"
+               data-cta-location="bottom_mobile"
+               data-cta-destination="whatsapp"
+               data-event-name="mobile_whatsapp_cta_click"
+               data-base-whatsapp-text="Hi Anat, I’m interested in the Eclairs of the Douro French baking experience. We are ___ people and we’re in Porto on ___ . Is there availability?"
+               aria-label="Check availability and reserve on WhatsApp"
+               href="https://wa.me/351937106777?text=Hi%20Anat%2C%20I%E2%80%99m%20interested%20in%20the%20Eclairs%20of%20the%20Douro%20French%20baking%20experience.%20We%20are%20___%20people%20and%20we%E2%80%99re%20in%20Porto%20on%20___%20.%20Is%20there%20availability%3F"
+               target="_blank"
+               rel="noopener">Check availability &amp; reserve on WhatsApp</a>
           </div>
-          <p class="cta-note">Special introductory price — €45 per person · Final availability and booking details shown on Viator.</p>
+          <p class="cta-note">
+            <span class="desktop-copy">Special introductory price — €45 per person · Final availability and booking details shown on Viator.</span>
+            <span class="mobile-copy">Special introductory price — €45 per person · Final availability confirmed with Anat on WhatsApp.</span>
+          </p>
         </div>
       </div>
     </section>
