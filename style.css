@@ -73,7 +73,6 @@ nav a:hover { color: #fff; }
   transition: background .2s ease, color .2s ease;
 }
 .header-cta:hover { background: #fff; color: var(--ink); }
-.mobile-snoopy { display: none; }
 
 .hero {
   min-height: 780px;
@@ -386,8 +385,7 @@ footer > span:last-child { justify-self: end; }
   .brand small { font-size: 9px; }
   .brand-mark { width: 36px; height: 36px; font-size: 20px; }
   .header-cta { display: none; }
-  .site-header { grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
-  .mobile-snoopy { display: block; width: 54px; height: 54px; object-fit: contain; }
+  .site-header { grid-template-columns: 1fr; }
   .hero,
   .hero-copy,
   .hero-copy > *,
@@ -515,7 +513,8 @@ footer > span:last-child { justify-self: end; }
   .final-actions { width: 100%; }
   footer { grid-template-columns: 1fr; gap: 22px; padding: 28px 20px; }
   .footer-links { flex-wrap: wrap; gap: 18px; }
-  .footer-signature { display: none; }
+  .footer-signature { display: flex; width: 100%; justify-content: flex-end; }
+  .footer-signature img { width: 86px; height: 86px; }
   .mobile-booking {
     position: fixed;
     z-index: 50;
@@ -544,7 +543,6 @@ footer > span:last-child { justify-self: end; }
 @media (max-width: 380px) {
   .brand > span:last-child { max-width: 190px; }
   .brand strong { font-size: 14px; }
-  .mobile-snoopy { width: 48px; height: 48px; }
   .hero-copy { padding-right: 16px; padding-left: 16px; }
   .trust-ribbon { padding-right: 12px; padding-left: 12px; }
   .mobile-booking { grid-template-columns: minmax(0, 1fr) 112px; gap: 8px; }
