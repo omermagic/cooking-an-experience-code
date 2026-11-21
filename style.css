@@ -338,6 +338,7 @@ footer > span:last-child { justify-self: end; }
 }
 
 @media (max-width: 860px) {
+  a[href*="viator.com"] { display: none !important; }
   .hero { grid-template-columns: 1fr; }
   .hero-copy { padding: 70px 24px 64px; }
   .hero-visual { height: 610px; }
@@ -353,6 +354,7 @@ footer > span:last-child { justify-self: end; }
   .photo-small { grid-column: 2; grid-row: 2; }
   .review-heading, .details { grid-template-columns: 1fr; }
   .rating-total { margin-top: 12px; }
+  .hero-proof i { display: none; }
   .host { grid-template-columns: 1fr; }
   .host-image { max-width: 560px; }
   footer { grid-template-columns: 1fr auto; }
