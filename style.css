@@ -466,8 +466,9 @@ footer > span:last-child { justify-self: end; }
     line-height: 1.16;
     letter-spacing: -.01em;
   }
+  .experience-grid .memory-step { padding-bottom: 8px; }
   .experience-grid p { grid-column: 2; margin-top: 6px; font-size: 13px; line-height: 1.55; }
-  .workshop-glimpse { width: 148px; margin-top: 14px; margin-right: 2px; }
+  .workshop-glimpse { width: 84px; margin: -6px 2px -10px auto; }
   .photo-story { grid-template-columns: 1fr; grid-template-rows: auto; }
   .photo-tall { grid-column: 1; grid-row: 1; }
   .photo-copy { grid-column: 1; grid-row: 2; }
