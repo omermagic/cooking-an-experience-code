@@ -73,6 +73,7 @@ nav a:hover { color: #fff; }
   transition: background .2s ease, color .2s ease;
 }
 .header-cta:hover { background: #fff; color: var(--ink); }
+.mobile-snoopy { display: none; }
 
 .hero {
   min-height: 780px;
@@ -384,7 +385,8 @@ footer > span:last-child { justify-self: end; }
   .brand small { font-size: 9px; }
   .brand-mark { width: 36px; height: 36px; font-size: 20px; }
   .header-cta { display: none; }
-  .site-header { grid-template-columns: 1fr; }
+  .site-header { grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
+  .mobile-snoopy { display: block; width: 54px; height: 54px; object-fit: contain; }
   .hero,
   .hero-copy,
   .hero-copy > *,
@@ -460,8 +462,7 @@ footer > span:last-child { justify-self: end; }
   .final-actions { width: 100%; }
   footer { grid-template-columns: 1fr; padding: 30px 20px; }
   .footer-links { flex-wrap: wrap; }
-  .footer-signature { justify-self: end; }
-  .footer-signature img { width: 96px; height: 96px; }
+  .footer-signature { display: none; }
   .mobile-booking {
     position: fixed;
     z-index: 50;
