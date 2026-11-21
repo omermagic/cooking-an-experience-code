@@ -388,7 +388,10 @@ footer > span:last-child { justify-self: end; }
   .hero-actions .button { width: 100%; min-width: 0; white-space: normal; overflow-wrap: anywhere; }
   .hero-proof { gap: 14px; flex-wrap: wrap; }
   .hero-proof a { column-gap: 7px; }
-  .hero-visual { height: 500px; }
+  .hero-visual { height: auto; min-height: 0; background: #21130f; }
+  .hero-view,
+  .hero-view img { height: auto; }
+  .hero-view img { object-fit: contain; }
   .hero-eclairs { width: 170px; right: 16px; bottom: 18px; }
   .hero-eclairs figcaption { display: none; }
   .hero-note { left: 14px; bottom: 16px; max-width: 170px; }
@@ -400,17 +403,22 @@ footer > span:last-child { justify-self: end; }
   .experience-grid article { min-height: 0; padding: 24px 0 28px; border-right: 0; border-top: 1px solid var(--line); }
   .experience-grid article:first-child { border-top: 0; }
   .experience-grid h3 { margin-top: 20px; }
-  .photo-story { grid-template-columns: 1fr; grid-template-rows: 470px 245px 430px 330px; }
+  .photo-story { grid-template-columns: 1fr; grid-template-rows: auto; }
   .photo-tall { grid-column: 1; grid-row: 1; }
   .photo-copy { grid-column: 1; grid-row: 2; }
   .photo-wide { grid-column: 1; grid-row: 3; }
   .photo-small { grid-column: 1; grid-row: 4; }
+  .photo-story figure,
+  .photo-story img { height: auto; }
+  .photo-story img { object-fit: contain; }
+  .photo-copy { min-height: 245px; }
   .review-grid { grid-template-columns: 1fr; margin-top: 36px; }
   .featured-review { grid-column: auto; }
   .review-card { min-height: 0; padding: 28px; }
   .review-card blockquote { font-size: 27px; }
   .host { padding-top: 82px; padding-bottom: 82px; }
   .host-image > div { right: -4px; bottom: 16px; }
+  .host-image img { height: auto; max-height: none; object-fit: contain; }
   dl { grid-template-columns: 1fr; }
   .booking-card { padding: 32px 24px; }
   .booking-card h3 { font-size: 35px; }
