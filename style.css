@@ -291,8 +291,9 @@ p { color: var(--muted); }
 .review-source { color: var(--copper); font-size: 11px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 .featured-review .review-source { color: var(--gold); }
 .review-card blockquote { margin: 26px 0 0; font-size: clamp(25px, 2.2vw, 36px); line-height: 1.17; }
-.review-card p { margin: 18px 0 22px; font-size: 14px; }
-.featured-review p { color: rgba(255,255,255,.66); }
+.review-mobile-quote { display: none; }
+.review-author { margin-top: 15px; color: var(--wine); font-size: 14px; font-style: normal; font-weight: 800; }
+.featured-review .review-author { color: var(--gold); }
 .review-card a { width: fit-content; margin-top: auto; color: var(--river); border-bottom: 1px solid currentColor; font-size: 13px; font-weight: 800; }
 .featured-review a { color: var(--gold); }
 
@@ -685,8 +686,9 @@ footer > span:last-child { justify-self: end; }
   .featured-review { grid-column: auto; }
   .review-card { min-height: 0; padding: 21px 20px; }
   .review-card blockquote { margin-top: 17px; font-size: 23px; line-height: 1.2; }
+  .review-desktop-quote { display: none; }
+  .review-mobile-quote { display: block; }
   .featured-review blockquote { font-size: 25px; }
-  .review-card p { margin: 13px 0 18px; }
   .host { gap: 30px; padding: 52px 18px; }
   .host-image > div { right: 10px; bottom: 10px; padding: 12px 15px; }
   .host-image strong { font-size: 16px; }
