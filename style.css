@@ -417,12 +417,14 @@ footer > span:last-child { justify-self: end; }
   .hero-copy .chocolate-drip {
     position: absolute;
     z-index: 4;
+    top: calc(100% - 6px);
     right: 0;
-    bottom: -44px;
+    bottom: auto;
     left: 0;
     display: block;
     height: 72px;
     background: url('images/chocolate-drip-realistic.png') center top / 100% 72px no-repeat;
+    clip-path: inset(6px 0 0);
     filter: brightness(.48) saturate(.78) drop-shadow(0 5px 5px rgba(25,8,6,.3));
     pointer-events: none;
   }
@@ -493,7 +495,7 @@ footer > span:last-child { justify-self: end; }
   }
   .hero-eclairs img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
   .hero-eclairs figcaption { display: block; padding: 10px 16px; }
-  .hero-copy .chocolate-drip { bottom: -48px; height: 78px; background-size: 100% 78px; }
+  .hero-copy .chocolate-drip { height: 78px; background-size: 100% 78px; }
   .hero-note {
     position: static;
     width: 100%;
