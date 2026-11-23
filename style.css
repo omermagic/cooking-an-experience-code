@@ -402,7 +402,7 @@ footer > span:last-child { justify-self: end; }
   .hero-copy {
     position: relative;
     z-index: 2;
-    padding: 70px 24px 64px;
+    padding: 48px 24px 64px;
     overflow: visible;
     background:
       radial-gradient(circle at 18% 12%, rgba(200,115,66,.18), transparent 34%),
@@ -465,7 +465,7 @@ footer > span:last-child { justify-self: end; }
   .hero-details,
   .hero-proof { width: 100%; min-width: 0; max-width: 100%; }
   .hero { overflow: hidden; }
-  .hero-copy { padding: 40px 18px 42px; overflow: visible; }
+  .hero-copy { padding: 10px 18px 42px; overflow: visible; }
   .eyebrow { margin-bottom: 14px; font-size: 11px; letter-spacing: .14em; }
   h1 { font-size: clamp(42px, 12vw, 48px); line-height: 1; }
   h2 { font-size: clamp(35px, 9.8vw, 40px); line-height: 1.04; }
