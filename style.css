@@ -296,7 +296,7 @@ p { color: var(--muted); }
 .host {
   --host-drip-height: clamp(130px, 16vw, 220px);
   position: relative;
-  z-index: 1;
+  z-index: 3;
   max-width: none;
   display: grid;
   grid-template-columns: minmax(360px, .85fr) minmax(0, 1.15fr);
