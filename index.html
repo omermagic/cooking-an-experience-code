@@ -145,7 +145,7 @@
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="preload" as="image" href="images/view-900.jpg" imagesrcset="images/view-900.jpg 900w, images/view-1800.jpg 1800w" imagesizes="(max-width: 860px) 100vw, 52vw">
-  <link rel="stylesheet" href="style.css?v=20261123-48">
+    <link rel="stylesheet" href="style.css?v=20261123-57">
 </head>
 
 <body>
@@ -194,6 +194,7 @@
           </a>
         </div>
         <span class="chocolate-drip" aria-hidden="true"></span>
+        <span class="falling-chocolate" aria-hidden="true"><span class="falling-chocolate-drop"></span></span>
       </div>
 
       <div class="hero-visual" aria-label="Douro sunset and handmade éclairs">
@@ -353,33 +354,6 @@
 
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      var heroCopy = document.querySelector('.hero-copy');
-      var mobileHero = window.matchMedia('(max-width: 620px)');
-      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      var dripFramePending = false;
-
-      function updateDripParallax() {
-        dripFramePending = false;
-        if (!heroCopy || !mobileHero.matches || reducedMotion.matches) {
-          if (heroCopy) heroCopy.style.setProperty('--drip-shift', '0px');
-          return;
-        }
-
-        var heroHeight = Math.max(heroCopy.offsetHeight, 1);
-        var progress = Math.min(1, Math.max(0, -heroCopy.getBoundingClientRect().top / heroHeight));
-        heroCopy.style.setProperty('--drip-shift', (progress * 10).toFixed(2) + 'px');
-      }
-
-      function requestDripParallax() {
-        if (dripFramePending) return;
-        dripFramePending = true;
-        window.requestAnimationFrame(updateDripParallax);
-      }
-
-      window.addEventListener('scroll', requestDripParallax, { passive: true });
-      window.addEventListener('resize', requestDripParallax, { passive: true });
-      requestDripParallax();
-
       document.querySelectorAll('.whatsapp-booking-cta').forEach(function (link) {
         var message = whatsappText;
         if (referralSource.trim()) message += '\n\nReferred by ' + referralSource.trim().slice(0, 80);
@@ -403,6 +377,48 @@
           }
         });
       });
+
+      var fallingChocolate = document.querySelector('.falling-chocolate');
+      var dripTrigger = document.querySelector('.hero-copy .chocolate-drip');
+      var finalHeroLine = document.querySelector('.hero-line:nth-child(3)');
+      var mobileDrip = window.matchMedia('(max-width: 620px)');
+      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var heroTextFinished = false;
+      var dripInUpperHalf = false;
+      var dripObserver;
+
+      function startChocolateDrop() {
+        if (!fallingChocolate || !heroTextFinished || !dripInUpperHalf || fallingChocolate.classList.contains('is-dripping')) return;
+        fallingChocolate.classList.add('is-dripping');
+        if (dripObserver) dripObserver.disconnect();
+      }
+
+      function observeChocolateDrop() {
+        if (!fallingChocolate || !dripTrigger || !mobileDrip.matches || reducedMotion.matches || dripObserver) return;
+        dripObserver = new IntersectionObserver(function (entries) {
+          if (entries.some(function (entry) { return entry.isIntersecting; })) {
+            dripInUpperHalf = true;
+            startChocolateDrop();
+          }
+        }, { root: null, rootMargin: '0px 0px -50% 0px', threshold: 0.01 });
+        dripObserver.observe(dripTrigger);
+      }
+
+      if (finalHeroLine) {
+        finalHeroLine.addEventListener('animationend', function (event) {
+          if (event.animationName !== 'hero-line-in') return;
+          heroTextFinished = true;
+          startChocolateDrop();
+        }, { once: true });
+      }
+
+      window.setTimeout(function () {
+        heroTextFinished = true;
+        startChocolateDrop();
+      }, 1300);
+
+      observeChocolateDrop();
+      mobileDrip.addEventListener('change', observeChocolateDrop);
     }());
   </script>
 </body>
