@@ -182,11 +182,11 @@
 
         <div class="hero-proof" aria-label="Guest ratings">
           <a href="https://maps.app.goo.gl/HZtvNrMatiusGksPA" target="_blank" rel="noopener">
-            <span class="stars" aria-hidden="true">★★★★★</span><strong>5.0 Google</strong><small data-review-count="23">23 reviews</small>
+            <span class="stars" aria-hidden="true">★★★★★</span><strong>5.0 Google</strong><small>Guest reviews</small>
           </a>
           <i aria-hidden="true"></i>
           <a href="https://www.viator.com/tours/Porto/Eclairs-of-the-Douro-Pastry-and-Wine-Experience/d26879-5659967P2" target="_blank" rel="noopener">
-            <span class="stars" aria-hidden="true">★★★★★</span><strong>5.0 Viator</strong><small data-review-count="4">4 reviews</small>
+            <span class="stars" aria-hidden="true">★★★★★</span><strong>5.0 Viator</strong><small>Guest reviews</small>
           </a>
         </div>
         <span class="chocolate-drip" aria-hidden="true"></span>
@@ -240,7 +240,7 @@
     <section class="reviews section" id="reviews" aria-labelledby="reviews-title">
       <div class="review-heading">
         <div><div class="eyebrow dark">What guests are saying</div><h2 id="reviews-title">The reviews now tell the story.</h2></div>
-        <div class="rating-total"><span class="stars" aria-hidden="true">★★★★★</span><strong>5.0 across both platforms</strong><span><span id="total-review-count">27</span> reviews on Google and Viator</span></div>
+        <div class="rating-total"><span class="stars" aria-hidden="true">★★★★★</span><strong>5.0 on both platforms</strong><span>Guest reviews on Google and Viator</span></div>
       </div>
 
       <div class="review-grid">
@@ -348,14 +348,6 @@
       var conversionId = 'AW-18164522007/gGi0CNbjx8kcEJe4wtVD';
 
       document.getElementById('year').textContent = new Date().getFullYear();
-
-      var totalReviewCount = 0;
-      document.querySelectorAll('[data-review-count]').forEach(function (element) {
-        var count = Number(element.getAttribute('data-review-count')) || 0;
-        totalReviewCount += count;
-        element.textContent = count + ' reviews';
-      });
-      document.getElementById('total-review-count').textContent = totalReviewCount;
 
       document.querySelectorAll('.whatsapp-booking-cta').forEach(function (link) {
         var message = whatsappText;
