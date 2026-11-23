@@ -603,7 +603,7 @@ footer > span:last-child { justify-self: end; }
     bottom: 0;
     left: 0;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(112px, 132px);
+    grid-template-columns: max-content minmax(168px, 1fr);
     align-items: center;
     gap: 12px;
     padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
@@ -611,14 +611,21 @@ footer > span:last-child { justify-self: end; }
     border-top: 1px solid var(--line);
     box-shadow: 0 -12px 30px rgba(36,23,20,.12);
     backdrop-filter: blur(12px);
-    width: 100vw;
-    max-width: 100%;
+    width: auto;
     overflow: hidden;
   }
-  .mobile-booking div { display: grid; line-height: 1.25; }
+  .mobile-booking div { min-width: 0; display: grid; line-height: 1.25; }
   .mobile-booking strong { font-size: 13px; }
   .mobile-booking span { color: var(--muted); font-size: 11px; }
-  .mobile-booking .button { width: 100%; min-width: 0; min-height: 48px; padding: 12px 10px; white-space: normal; }
+  .mobile-booking .button { width: 100%; min-width: 0; min-height: 48px; padding: 12px 10px; font-size: 13px; white-space: normal; }
+  .mobile-booking .button-primary {
+    border-color: rgba(126,78,18,.16);
+    letter-spacing: .01em;
+    animation: sticky-cta-glow 4.8s ease-in-out infinite;
+  }
+  .mobile-booking .button-primary::after {
+    animation: sticky-cta-shimmer 5.6s ease-in-out 1.2s infinite;
+  }
 }
 
 @media (max-width: 380px) {
@@ -626,10 +633,22 @@ footer > span:last-child { justify-self: end; }
   .brand strong { font-size: 14px; }
   .hero-copy { padding-right: 16px; padding-left: 16px; }
   .trust-ribbon { padding-right: 12px; padding-left: 12px; }
-  .mobile-booking { grid-template-columns: minmax(0, 1fr) 112px; gap: 8px; }
+  .mobile-booking { grid-template-columns: max-content minmax(168px, 1fr); gap: 8px; }
+}
+
+@keyframes sticky-cta-shimmer {
+  0%, 68% { left: -65%; }
+  88%, 100% { left: 125%; }
+}
+
+@keyframes sticky-cta-glow {
+  0%, 100% { box-shadow: 0 7px 18px rgba(221,169,80,.2); }
+  50% { box-shadow: 0 9px 25px rgba(221,169,80,.38); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+  .mobile-booking .button-primary,
+  .mobile-booking .button-primary::after { animation: none !important; }
 }
