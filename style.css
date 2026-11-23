@@ -311,11 +311,12 @@ p { color: var(--muted); }
   content: '';
   position: absolute;
   z-index: 3;
-  top: calc(100% - 1px);
+  top: calc(100% - 7px);
   right: 0;
   left: 0;
   height: var(--host-drip-height);
   background: url('images/chocolate-drip-long-v2.png') center top / 100% 100% no-repeat;
+  clip-path: inset(6px 0 0);
   filter: brightness(.66) saturate(.82) drop-shadow(0 8px 7px rgba(25,8,6,.2));
   pointer-events: none;
 }
@@ -329,7 +330,7 @@ p { color: var(--muted); }
 .host-copy h2 { margin-bottom: 30px; }
 .host-signoff { display: inline-flex; margin-top: 10px; padding: 13px 18px; border: 1px solid var(--soft-line); color: var(--gold); font-family: var(--serif); font-style: italic; }
 
-.details { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(50px, 8vw, 108px); align-items: center; padding-top: clamp(72px, 5.7vw, 92px); }
+.details { position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(50px, 8vw, 108px); align-items: center; padding-top: clamp(37px, calc(3vw + 5px), 53px); }
 .details-copy > p { max-width: 650px; margin: 25px 0 0; font-size: 17px; }
 dl { display: grid; grid-template-columns: 1fr 1fr; margin: 44px 0 0; border-top: 1px solid var(--line); }
 dl div { padding: 16px 12px 16px 0; border-bottom: 1px solid var(--line); }
@@ -567,7 +568,7 @@ footer > span:last-child { justify-self: end; }
   .host-copy h2 { margin-bottom: 18px; }
   .host-copy p { font-size: 16px; }
   .host-signoff { margin-top: 4px; }
-  .details { gap: 32px; padding-top: 34px; }
+  .details { gap: 32px; padding-top: 21px; }
   .details-copy > p { margin-top: 16px; font-size: 16px; }
   dl { grid-template-columns: 1fr 1fr; margin-top: 24px; }
   dl div { min-width: 0; padding: 11px 10px 11px 0; }
